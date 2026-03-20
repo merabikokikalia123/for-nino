@@ -10,16 +10,17 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
   font-family:sans-serif;
   overflow:hidden;
   color:white;
   text-align:center;
 }
 .container{
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.5);
   padding:40px;
   border-radius:20px;
+  z-index:2;
+  position:relative;
 }
 button{
   padding:12px 25px;
@@ -38,6 +39,8 @@ button{
   color:white;
   position:relative;
 }
+
+/* გულები */
 .heart{
   position:absolute;
   font-size:20px;
@@ -47,12 +50,31 @@ button{
 0%{transform:translateY(-100px);}
 100%{transform:translateY(100vh);}
 }
-iframe{
-  display:none; /* ვიდეო თავიდან არ ჩანს */
+
+/* YouTube ფონური ვიდეო */
+.youtube-background {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  overflow:hidden;
+}
+.youtube-background iframe {
+  width:100%;
+  height:100%;
+  pointer-events:none;
 }
 </style>
 </head>
 <body>
+
+<!-- YouTube ვიდეო ფონად -->
+<div class="youtube-background">
+  <iframe src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI&controls=0&mute=1&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
 <div class="container">
 <h1 id="title"></h1>
 <p>ნანა ❤️ ძალიან ძალიან მომწონხარ და უკვე ვგიჟდები შენზე...</p>
@@ -60,7 +82,7 @@ iframe{
 <button id="yes" onclick="yesClick()">YES ❤️</button>
 <button id="no" onmouseover="moveButton()">NO 😅</button>
 <p id="result"></p>
-<button id="playBtn" onclick="playMusic()">🎵 მუსიკის ჩართვა</button>
+<button id="playBtn" onclick="playMusic()">🎵 ჩართე მუსიკა</button>
 </div>
 
 <div id="music"></div>
@@ -103,7 +125,7 @@ setTimeout(()=>{heart.remove();},6000);
 }
 setInterval(createHeart,400);
 
-// ფონური YouTube მუსიკა მობილურისთვის
+// ღილაკი მუსიკის ჩართვისთვის (მობილურზეც)
 function playMusic(){
 if(!document.getElementById("ytplayer")){
 document.getElementById("music").innerHTML =
@@ -111,10 +133,10 @@ document.getElementById("music").innerHTML =
 src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI"
 frameborder="0"
 allow="autoplay; encrypted-media"></iframe>`;
-// ღილაკი ქრება, რომ აღარ უჭიროს მომხმარებელი
 document.getElementById("playBtn").style.display="none";
 }
 }
 </script>
+
 </body>
 </html>
