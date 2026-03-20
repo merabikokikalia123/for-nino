@@ -14,9 +14,10 @@ body{
   overflow:hidden;
   color:white;
   text-align:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
 }
 .container{
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.4);
   padding:40px;
   border-radius:20px;
   z-index:2;
@@ -30,112 +31,93 @@ button{
   cursor:pointer;
   margin:10px;
 }
-#yes{
-  background:#4CAF50;
-  color:white;
-}
-#no{
-  background:#ff4d6d;
-  color:white;
-  position:relative;
-}
-
-/* გულები */
+#yes{background:#4CAF50;color:white;}
+#no{background:#ff4d6d;color:white;position:relative;}
 .heart{
   position:absolute;
   font-size:20px;
   animation:fall 6s linear infinite;
 }
-@keyframes fall{
-0%{transform:translateY(-100px);}
-100%{transform:translateY(100vh);}
-}
-
-/* YouTube ფონური ვიდეო */
-.youtube-background {
+@keyframes fall{0%{transform:translateY(-100px);}100%{transform:translateY(100vh);}}
+.youtube-background{
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:1;
-  overflow:hidden;
+  top:0; left:0; width:100%; height:100%; z-index:1; overflow:hidden;
 }
-.youtube-background iframe {
-  width:100%;
-  height:100%;
-  pointer-events:none;
+.youtube-background iframe{
+  width:100%; height:100%; pointer-events:none;
 }
+.firework{
+  position:absolute; font-size:40px; animation:explode 1s ease-out forwards;
+}
+@keyframes explode{0%{opacity:1;transform:scale(0);}100%{opacity:0;transform:scale(4);}}
 </style>
 </head>
 <body>
 
-<!-- YouTube ვიდეო ფონად -->
-<div class="youtube-background">
-  <iframe src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI&controls=0&mute=1&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
 
 <div class="container">
 <h1 id="title"></h1>
-<p>ნანა ❤️ ძალიან ძალიან მომწონხარ და უკვე ვგიჟდები შენზე...</p>
+<p>Nana ❤️ ძალიან ძალიან მომწონხარ და უკვე ვგიჟდები შენზე...</p>
 <h3>გამოხვალ ჩემთან ერთად?</h3>
 <button id="yes" onclick="yesClick()">YES ❤️</button>
 <button id="no" onmouseover="moveButton()">NO 😅</button>
 <p id="result"></p>
-<button id="playBtn" onclick="playMusic()">🎵 ჩართე მუსიკა</button>
+
 </div>
 
-<div id="music"></div>
+
 
 <script>
 // ნელა დაწერილი ტექსტი
-let text="Nana ❤️";
-let i=0;
+let text="Nana ❤️", i=0;
 function typing(){
-if(i<text.length){
-document.getElementById("title").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typing,100);
-}
+  if(i<text.length){
+    document.getElementById("title").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typing,100);
+  }
 }
 typing();
 
 // YES ღილაკი
 function yesClick(){
-document.getElementById("result").innerHTML="ძალიან გამახარე ❤️🎉";
+  document.getElementById("result").innerHTML="ძალიან გამახარე ❤️🎉";
+  for(let j=0;j<20;j++) createFirework(); // მეტი ფეიერვერკი
 }
 
 // NO ღილაკი გარბის
 function moveButton(){
-let button=document.getElementById("no");
-let x=Math.random()*300-150;
-let y=Math.random()*300-150;
-button.style.transform="translate("+x+"px,"+y+"px)";
+  let b=document.getElementById("no");
+  let x=Math.random()*300-150;
+  let y=Math.random()*300-150;
+  b.style.transform="translate("+x+"px,"+y+"px)";
 }
 
 // გულების ანიმაცია
 function createHeart(){
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(20+Math.random()*20)+"px";
-document.body.appendChild(heart);
-setTimeout(()=>{heart.remove();},6000);
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(20+Math.random()*20)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>{h.remove();},6000);
 }
 setInterval(createHeart,400);
 
-// ღილაკი მუსიკის ჩართვისთვის (მობილურზეც)
-function playMusic(){
-if(!document.getElementById("ytplayer")){
-document.getElementById("music").innerHTML =
-`<iframe id="ytplayer" width="0" height="0"
-src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI"
-frameborder="0"
-allow="autoplay; encrypted-media"></iframe>`;
-document.getElementById("playBtn").style.display="none";
+// ფეიერვერკი YES-ზე
+function createFirework(){
+  let f=document.createElement("div");
+  f.className="firework";
+  f.innerHTML="✨";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*50+"vh";
+  document.body.appendChild(f);
+  setTimeout(()=>{f.remove();},1200);
 }
-}
+
+
+
 </script>
 
 </body>
