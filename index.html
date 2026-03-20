@@ -44,27 +44,23 @@ button{
   animation:fall 6s linear infinite;
 }
 @keyframes fall{
-  0%{transform:translateY(-100px);}
-  100%{transform:translateY(100vh);}
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
 }
 iframe{
-  display:none; /* ვიდეო არ ჩანს, უბრალოდ მუსიკა გადის ფონურად */
+  display:none; /* ვიდეო თავიდან არ ჩანს */
 }
 </style>
 </head>
 <body>
 <div class="container">
 <h1 id="title"></h1>
-<p>
-ნანა ❤️  
-ძალიან ძალიან მომწონხარ  
-და უკვე ვგიჟდები შენზე...
-</p>
+<p>ნანა ❤️ ძალიან ძალიან მომწონხარ და უკვე ვგიჟდები შენზე...</p>
 <h3>გამოხვალ ჩემთან ერთად?</h3>
 <button id="yes" onclick="yesClick()">YES ❤️</button>
 <button id="no" onmouseover="moveButton()">NO 😅</button>
 <p id="result"></p>
-<button onclick="playMusic()">🎵 მუსიკის ჩართვა</button>
+<button id="playBtn" onclick="playMusic()">🎵 მუსიკის ჩართვა</button>
 </div>
 
 <div id="music"></div>
@@ -74,48 +70,50 @@ iframe{
 let text="Nana ❤️";
 let i=0;
 function typing(){
-  if(i<text.length){
-    document.getElementById("title").innerHTML+=text.charAt(i);
-    i++;
-    setTimeout(typing,100);
-  }
+if(i<text.length){
+document.getElementById("title").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
 }
 typing();
 
 // YES ღილაკი
 function yesClick(){
-  document.getElementById("result").innerHTML="ძალიან გამახარე ❤️🎉";
+document.getElementById("result").innerHTML="ძალიან გამახარე ❤️🎉";
 }
 
 // NO ღილაკი გარბის
 function moveButton(){
-  let button=document.getElementById("no");
-  let x=Math.random()*300-150;
-  let y=Math.random()*300-150;
-  button.style.transform="translate("+x+"px,"+y+"px)";
+let button=document.getElementById("no");
+let x=Math.random()*300-150;
+let y=Math.random()*300-150;
+button.style.transform="translate("+x+"px,"+y+"px)";
 }
 
 // გულების ანიმაცია
 function createHeart(){
-  let heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤️";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(20+Math.random()*20)+"px";
-  document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},6000);
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},6000);
 }
 setInterval(createHeart,400);
 
-// ფონური YouTube მუსიკა
+// ფონური YouTube მუსიკა მობილურისთვის
 function playMusic(){
-  if(!document.getElementById("ytplayer")){
-    document.getElementById("music").innerHTML=
-    `<iframe id="ytplayer" width="0" height="0"
-    src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI"
-    frameborder="0"
-    allow="autoplay; encrypted-media"></iframe>`;
-  }
+if(!document.getElementById("ytplayer")){
+document.getElementById("music").innerHTML =
+`<iframe id="ytplayer" width="0" height="0"
+src="https://www.youtube.com/embed/nA2mRZcLuAI?autoplay=1&loop=1&playlist=nA2mRZcLuAI"
+frameborder="0"
+allow="autoplay; encrypted-media"></iframe>`;
+// ღილაკი ქრება, რომ აღარ უჭიროს მომხმარებელი
+document.getElementById("playBtn").style.display="none";
+}
 }
 </script>
 </body>
