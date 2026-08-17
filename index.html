@@ -14,23 +14,16 @@
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
     box-sizing:border-box;
 }
 
 html,
 body{
-
     width:100%;
-    min-height:100%;
-
+    height:100%;
     margin:0;
     padding:0;
-
     overflow:hidden;
 }
 
@@ -83,7 +76,7 @@ body{
 
     transform:
         translate(-50%,-50%)
-        scale(1.2);
+        scale(1.25);
 
     border:0;
 
@@ -94,7 +87,7 @@ body{
 
 
 /* =========================
-   OVERLAY
+   DARK OVERLAY
 ========================= */
 
 .overlay{
@@ -146,8 +139,11 @@ body{
 
     margin:auto;
 
-    animation:
-        appear 1.5s ease;
+    animation:appear 1.5s ease;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
 }
 
 
@@ -192,8 +188,7 @@ body{
         0 0 25px #ff477e,
         0 0 50px #ff174f;
 
-    animation:
-        titleGlow 2s infinite alternate;
+    animation:titleGlow 2s infinite alternate;
 }
 
 
@@ -253,9 +248,9 @@ body{
 
 .container h2{
 
-    margin:15px 0;
-
     font-size:25px;
+
+    margin:15px 0;
 }
 
 
@@ -373,6 +368,8 @@ button{
 
     backdrop-filter:blur(8px);
 
+    -webkit-backdrop-filter:blur(8px);
+
     border:
         1px solid rgba(255,150,190,.5);
 
@@ -405,7 +402,6 @@ button{
     }
 
     10%{
-
         opacity:1;
     }
 
@@ -420,7 +416,6 @@ button{
     }
 
     90%{
-
         opacity:1;
     }
 
@@ -465,7 +460,6 @@ button{
     }
 
     10%{
-
         opacity:1;
     }
 
@@ -513,7 +507,6 @@ button{
     }
 
     30%{
-
         opacity:1;
     }
 
@@ -557,7 +550,6 @@ button{
     }
 
     50%{
-
         opacity:1;
     }
 
@@ -644,12 +636,10 @@ button{
 @keyframes finalGlow{
 
     from{
-
         transform:scale(1);
     }
 
     to{
-
         transform:scale(1.08);
     }
 }
@@ -690,12 +680,10 @@ button{
 @keyframes heartBeat{
 
     0%,100%{
-
         transform:scale(1);
     }
 
     50%{
-
         transform:scale(1.25);
     }
 }
@@ -710,14 +698,15 @@ button{
     position:fixed;
 
     top:20px;
+
     right:20px;
 
-    z-index:9999;
+    z-index:99999;
 
     display:block;
 
     background:
-        rgba(255,40,100,.9);
+        rgba(255,40,100,.95);
 
     color:white;
 
@@ -747,7 +736,7 @@ button{
    MOBILE
 ========================= */
 
-@media (max-width:600px){
+@media(max-width:600px){
 
     html,
     body{
@@ -755,15 +744,9 @@ button{
         width:100%;
         height:100%;
 
-        min-height:100%;
-
         overflow:hidden;
     }
 
-
-    /* =========================
-       YOUTUBE MOBILE
-    ========================= */
 
     .youtube-background iframe{
 
@@ -777,21 +760,15 @@ button{
 
         transform:
             translate(-50%,-50%)
-            scale(1.35);
+            scale(1.5);
 
         opacity:.15;
     }
 
 
-    /* =========================
-       MAIN CARD
-    ========================= */
-
     .container{
 
         width:calc(100% - 24px);
-
-        max-width:none;
 
         max-height:calc(100vh - 80px);
 
@@ -813,10 +790,6 @@ button{
     }
 
 
-    /* =========================
-       TITLE
-    ========================= */
-
     #title{
 
         font-size:46px;
@@ -829,10 +802,6 @@ button{
     }
 
 
-    /* =========================
-       LOVE TEXT
-    ========================= */
-
     .love-text{
 
         font-size:17px;
@@ -844,10 +813,6 @@ button{
         max-width:100%;
     }
 
-
-    /* =========================
-       QUESTION
-    ========================= */
 
     .question{
 
@@ -869,10 +834,6 @@ button{
     }
 
 
-    /* =========================
-       BUTTONS
-    ========================= */
-
     .container button{
 
         padding:13px 30px;
@@ -893,10 +854,6 @@ button{
     }
 
 
-    /* =========================
-       RESULT
-    ========================= */
-
     #result{
 
         font-size:19px;
@@ -906,10 +863,6 @@ button{
         margin-top:12px;
     }
 
-
-    /* =========================
-       COMPLIMENTS
-    ========================= */
 
     .compliment{
 
@@ -929,19 +882,11 @@ button{
     }
 
 
-    /* =========================
-       HEARTS
-    ========================= */
-
     .heart{
 
         font-size:20px;
     }
 
-
-    /* =========================
-       SPARKLES
-    ========================= */
 
     .sparkle{
 
@@ -949,31 +894,25 @@ button{
     }
 
 
-    /* =========================
-       FIREWORKS
-    ========================= */
-
     .firework{
 
         font-size:38px;
     }
 
 
-    /* =========================
-       MUSIC MOBILE
-    ========================= */
-
     .music{
 
         position:fixed;
 
         top:12px;
+
         right:12px;
 
         bottom:auto;
+
         left:auto;
 
-        z-index:9999;
+        z-index:99999;
 
         display:block;
 
@@ -1009,14 +948,8 @@ button{
         backdrop-filter:blur(10px);
 
         -webkit-backdrop-filter:blur(10px);
-
-        transform:none;
     }
 
-
-    /* =========================
-       FINAL SCREEN
-    ========================= */
 
     .final-screen{
 
@@ -1057,92 +990,92 @@ button{
         margin:10px auto;
     }
 
-
-    /* =========================
-       SMALL PHONE
-    ========================= */
-
-    @media(max-height:700px){
-
-        .container{
-
-            padding:20px 15px;
-        }
+}
 
 
-        #title{
+/* =========================
+   SMALL PHONE
+========================= */
 
-            font-size:40px;
-        }
+@media(max-width:600px) and (max-height:700px){
 
+    .container{
 
-        .love-text{
-
-            font-size:15px;
-
-            line-height:1.4;
-
-            margin:8px 0;
-        }
+        padding:20px 15px;
+    }
 
 
-        .question{
+    #title{
 
-            font-size:19px;
-
-            margin:10px 0 6px;
-        }
+        font-size:40px;
+    }
 
 
-        .container h2{
+    .love-text{
 
-            font-size:18px;
+        font-size:15px;
 
-            margin:5px 0 8px;
-        }
+        line-height:1.4;
 
-
-        .container button{
-
-            padding:11px 25px;
-
-            font-size:17px;
-
-            min-height:45px;
-        }
+        margin:8px 0;
+    }
 
 
-        .final-heart{
+    .question{
 
-            font-size:60px;
-        }
+        font-size:19px;
 
-
-        .final-title{
-
-            font-size:40px;
-        }
+        margin:10px 0 6px;
+    }
 
 
-        .final-text{
+    .container h2{
 
-            font-size:16px;
+        font-size:18px;
 
-            line-height:1.45;
-        }
+        margin:5px 0 8px;
+    }
 
 
-        .music{
+    .container button{
 
-            top:10px;
+        padding:11px 25px;
 
-            right:10px;
+        font-size:17px;
 
-            padding:9px 13px;
+        min-height:45px;
+    }
 
-            font-size:12px;
-        }
 
+    .final-heart{
+
+        font-size:60px;
+    }
+
+
+    .final-title{
+
+        font-size:40px;
+    }
+
+
+    .final-text{
+
+        font-size:16px;
+
+        line-height:1.45;
+    }
+
+
+    .music{
+
+        top:10px;
+
+        right:10px;
+
+        padding:9px 13px;
+
+        font-size:12px;
     }
 
 }
@@ -1156,24 +1089,25 @@ button{
 
 
 <!-- =========================
-     YOUTUBE
+     YOUTUBE VIDEO
 ========================= -->
 
 <div class="youtube-background">
 
     <iframe
         id="youtubePlayer"
-        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
-        allow="autoplay; encrypted-media"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/c5wJSDMhmrQ?si=Xy2OC-m9um4y2udM&autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
     </iframe>
 
 </div>
 
-
-<!-- =========================
-     OVERLAY
-========================= -->
 
 <div class="overlay"></div>
 
@@ -1213,7 +1147,7 @@ button{
     </h2>
 
 
-    <div class="buttons">
+    <div>
 
         <button
             id="yes"
@@ -1314,9 +1248,10 @@ button{
 
 <script>
 
-/* =====================================================
+
+/* =========================
    TITLE TYPING
-===================================================== */
+========================= */
 
 let titleText = "Natia ❤️";
 
@@ -1342,18 +1277,20 @@ function typing(){
 typing();
 
 
-/* =====================================================
+/* =========================
    MUSIC
-===================================================== */
+========================= */
 
 function startMusic(){
 
     const iframe =
         document.getElementById("youtubePlayer");
 
+
     iframe.src =
         "https://www.youtube.com/embed/c5wJSDMhmrQ" +
-        "?autoplay=1" +
+        "?si=Xy2OC-m9um4y2udM" +
+        "&autoplay=1" +
         "&mute=0" +
         "&loop=1" +
         "&playlist=c5wJSDMhmrQ" +
@@ -1368,18 +1305,14 @@ function startMusic(){
 }
 
 
-/* =====================================================
+/* =========================
    YES BUTTON
-===================================================== */
+========================= */
 
 function yesClick(){
 
-    /* MUSIC */
-
     startMusic();
 
-
-    /* MAIN CARD */
 
     document.querySelector(".container").style.opacity =
         "0";
@@ -1389,8 +1322,6 @@ function yesClick(){
         "scale(.7)";
 
 
-    /* FINAL SCREEN */
-
     setTimeout(()=>{
 
         document
@@ -1399,8 +1330,6 @@ function yesClick(){
 
     },500);
 
-
-    /* FIREWORKS */
 
     for(let i=0;i<100;i++){
 
@@ -1413,8 +1342,6 @@ function yesClick(){
     }
 
 
-    /* HEARTS */
-
     for(let i=0;i<80;i++){
 
         setTimeout(()=>{
@@ -1425,8 +1352,6 @@ function yesClick(){
 
     }
 
-
-    /* SPARKLES */
 
     for(let i=0;i<70;i++){
 
@@ -1441,9 +1366,9 @@ function yesClick(){
 }
 
 
-/* =====================================================
+/* =========================
    NO BUTTON
-===================================================== */
+========================= */
 
 function moveButton(){
 
@@ -1454,14 +1379,14 @@ function moveButton(){
     let maxX =
         Math.min(
             250,
-            window.innerWidth/3
+            window.innerWidth / 3
         );
 
 
     let maxY =
         Math.min(
             180,
-            window.innerHeight/3
+            window.innerHeight / 3
         );
 
 
@@ -1470,14 +1395,14 @@ function moveButton(){
         maxX =
             Math.min(
                 90,
-                window.innerWidth/4
+                window.innerWidth / 4
             );
 
 
         maxY =
             Math.min(
                 80,
-                window.innerHeight/5
+                window.innerHeight / 5
             );
 
     }
@@ -1485,13 +1410,13 @@ function moveButton(){
 
     const x =
         Math.random() *
-        (maxX*2) -
+        (maxX * 2) -
         maxX;
 
 
     const y =
         Math.random() *
-        (maxY*2) -
+        (maxY * 2) -
         maxY;
 
 
@@ -1501,9 +1426,9 @@ function moveButton(){
 }
 
 
-/* =====================================================
+/* =========================
    COMPLIMENTS
-===================================================== */
+========================= */
 
 const compliments = [
 
@@ -1574,15 +1499,15 @@ function createCompliment(){
 
 
     element.style.left =
-        Math.random()*80+10+"vw";
+        Math.random() * 80 + 10 + "vw";
 
 
     element.style.top =
-        Math.random()*70+10+"vh";
+        Math.random() * 70 + 10 + "vh";
 
 
     element.style.animationDuration =
-        (3+Math.random()*3)+"s";
+        (3 + Math.random() * 3) + "s";
 
 
     document.body.appendChild(element);
@@ -1603,9 +1528,9 @@ setInterval(
 );
 
 
-/* =====================================================
+/* =========================
    HEARTS
-===================================================== */
+========================= */
 
 function createHeart(){
 
@@ -1628,21 +1553,21 @@ function createHeart(){
 
     ][
         Math.floor(
-            Math.random()*6
+            Math.random() * 6
         )
     ];
 
 
     heart.style.left =
-        Math.random()*100+"vw";
+        Math.random() * 100 + "vw";
 
 
     heart.style.fontSize =
-        (18+Math.random()*35)+"px";
+        (18 + Math.random() * 35) + "px";
 
 
     heart.style.animationDuration =
-        (4+Math.random()*5)+"s";
+        (4 + Math.random() * 5) + "s";
 
 
     document.body.appendChild(heart);
@@ -1663,9 +1588,9 @@ setInterval(
 );
 
 
-/* =====================================================
+/* =========================
    SPARKLES
-===================================================== */
+========================= */
 
 function createSparkle(){
 
@@ -1677,28 +1602,27 @@ function createSparkle(){
         "sparkle";
 
 
-    sparkle.innerHTML =
-        [
+    sparkle.innerHTML = [
 
-            "✨",
-            "⭐",
-            "💫",
-            "✦",
-            "✧"
+        "✨",
+        "⭐",
+        "💫",
+        "✦",
+        "✧"
 
-        ][
-            Math.floor(
-                Math.random()*5
-            )
-        ];
+    ][
+        Math.floor(
+            Math.random() * 5
+        )
+    ];
 
 
     sparkle.style.left =
-        Math.random()*100+"vw";
+        Math.random() * 100 + "vw";
 
 
     sparkle.style.top =
-        Math.random()*100+"vh";
+        Math.random() * 100 + "vh";
 
 
     document.body.appendChild(sparkle);
@@ -1719,9 +1643,9 @@ setInterval(
 );
 
 
-/* =====================================================
+/* =========================
    FIREWORKS
-===================================================== */
+========================= */
 
 function createFirework(){
 
@@ -1733,29 +1657,28 @@ function createFirework(){
         "firework";
 
 
-    firework.innerHTML =
-        [
+    firework.innerHTML = [
 
-            "🎆",
-            "✨",
-            "💥",
-            "❤️",
-            "💖",
-            "💕"
+        "🎆",
+        "✨",
+        "💥",
+        "❤️",
+        "💖",
+        "💕"
 
-        ][
-            Math.floor(
-                Math.random()*6
-            )
-        ];
+    ][
+        Math.floor(
+            Math.random() * 6
+        )
+    ];
 
 
     firework.style.left =
-        Math.random()*90+"vw";
+        Math.random() * 90 + "vw";
 
 
     firework.style.top =
-        Math.random()*75+"vh";
+        Math.random() * 75 + "vh";
 
 
     document.body.appendChild(firework);
