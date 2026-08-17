@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html lang="ka">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
 
 <title>Natia ❤️</title>
 
+
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     box-sizing:border-box;
 }
 
+html,
 body{
+
+    width:100%;
+    min-height:100%;
+
     margin:0;
-    min-height:100vh;
+
+    padding:0;
+
     overflow:hidden;
+}
+
+
+body{
+
+    min-height:100vh;
 
     font-family:Arial,sans-serif;
 
     color:white;
+
     text-align:center;
 
     background:
-        radial-gradient(circle at 50% 20%,#ff477e 0%,#6d1238 45%,#15000a 100%);
+        radial-gradient(
+            circle at 50% 20%,
+            #ff477e 0%,
+            #6d1238 45%,
+            #15000a 100%
+        );
 }
 
 
@@ -32,20 +62,29 @@ body{
 ========================= */
 
 .youtube-background{
+
     position:fixed;
+
     inset:0;
+
     z-index:0;
+
     pointer-events:none;
+
     overflow:hidden;
 }
 
+
 .youtube-background iframe{
+
     position:absolute;
 
     width:100vw;
+
     height:100vh;
 
     left:50%;
+
     top:50%;
 
     transform:
@@ -65,7 +104,9 @@ body{
 ========================= */
 
 .overlay{
+
     position:fixed;
+
     inset:0;
 
     background:
@@ -84,6 +125,7 @@ body{
 ========================= */
 
 .container{
+
     position:relative;
 
     width:min(92%,700px);
@@ -92,12 +134,15 @@ body{
 
     border-radius:30px;
 
-    background:rgba(35,0,18,.65);
+    background:
+        rgba(35,0,18,.65);
 
     backdrop-filter:blur(15px);
+
     -webkit-backdrop-filter:blur(15px);
 
-    border:1px solid rgba(255,150,190,.45);
+    border:
+        1px solid rgba(255,150,190,.45);
 
     box-shadow:
         0 0 30px rgba(255,0,90,.4),
@@ -105,20 +150,31 @@ body{
 
     z-index:5;
 
-    animation:appear 1.5s ease;
+    margin:auto;
+
+    animation:
+        appear 1.5s ease;
 }
 
 
 @keyframes appear{
 
     from{
+
         opacity:0;
-        transform:scale(.8) translateY(30px);
+
+        transform:
+            scale(.8)
+            translateY(30px);
     }
 
     to{
+
         opacity:1;
-        transform:scale(1) translateY(0);
+
+        transform:
+            scale(1)
+            translateY(0);
     }
 }
 
@@ -150,12 +206,14 @@ body{
 @keyframes titleGlow{
 
     from{
+
         text-shadow:
             0 0 10px #ff477e,
             0 0 20px #ff477e;
     }
 
     to{
+
         text-shadow:
             0 0 20px #fff,
             0 0 40px #ff477e,
@@ -181,6 +239,10 @@ body{
 }
 
 
+/* =========================
+   QUESTION
+========================= */
+
 .question{
 
     font-size:30px;
@@ -192,6 +254,14 @@ body{
     text-shadow:
         0 0 10px #ff477e,
         0 0 25px #ff477e;
+}
+
+
+.container h2{
+
+    margin:15px 0;
+
+    font-size:25px;
 }
 
 
@@ -219,6 +289,8 @@ button{
 }
 
 
+/* YES */
+
 #yes{
 
     background:
@@ -245,6 +317,8 @@ button{
         0 0 70px rgba(0,255,100,.5);
 }
 
+
+/* NO */
 
 #no{
 
@@ -337,6 +411,7 @@ button{
     }
 
     10%{
+
         opacity:1;
     }
 
@@ -351,6 +426,7 @@ button{
     }
 
     90%{
+
         opacity:1;
     }
 
@@ -395,6 +471,7 @@ button{
     }
 
     10%{
+
         opacity:1;
     }
 
@@ -442,6 +519,7 @@ button{
     }
 
     30%{
+
         opacity:1;
     }
 
@@ -485,6 +563,7 @@ button{
     }
 
     50%{
+
         opacity:1;
     }
 
@@ -522,7 +601,6 @@ button{
     text-align:center;
 
     background:
-
         radial-gradient(
             circle at center,
             rgba(255,30,90,.5),
@@ -534,6 +612,8 @@ button{
     pointer-events:none;
 
     transition:1.5s;
+
+    overflow-y:auto;
 }
 
 
@@ -544,6 +624,10 @@ button{
     pointer-events:auto;
 }
 
+
+/* =========================
+   FINAL TITLE
+========================= */
 
 .final-title{
 
@@ -566,14 +650,20 @@ button{
 @keyframes finalGlow{
 
     from{
+
         transform:scale(1);
     }
 
     to{
+
         transform:scale(1.08);
     }
 }
 
+
+/* =========================
+   FINAL TEXT
+========================= */
 
 .final-text{
 
@@ -590,6 +680,10 @@ button{
 }
 
 
+/* =========================
+   FINAL HEART
+========================= */
+
 .final-heart{
 
     font-size:100px;
@@ -602,10 +696,12 @@ button{
 @keyframes heartBeat{
 
     0%,100%{
+
         transform:scale(1);
     }
 
     50%{
+
         transform:scale(1.25);
     }
 }
@@ -620,6 +716,7 @@ button{
     position:fixed;
 
     bottom:20px;
+
     right:20px;
 
     z-index:30;
@@ -637,51 +734,375 @@ button{
     font-size:14px;
 
     backdrop-filter:blur(10px);
+
+    margin:0;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   MOBILE VERSION
+===================================================== */
 
-@media(max-width:600px){
+@media (max-width:600px){
 
-    #title{
-        font-size:48px;
+    html,
+    body{
+
+        width:100%;
+
+        height:100%;
+
+        min-height:100%;
+
+        overflow:hidden;
     }
+
+
+    /* =========================
+       YOUTUBE MOBILE
+    ========================= */
+
+    .youtube-background iframe{
+
+        width:100vw;
+
+        height:100vh;
+
+        left:50%;
+
+        top:50%;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.35);
+
+        opacity:.15;
+    }
+
+
+    /* =========================
+       MAIN CARD
+    ========================= */
 
     .container{
-        padding:30px 18px;
+
+        width:calc(100% - 24px);
+
+        max-width:none;
+
+        max-height:calc(100vh - 80px);
+
+        padding:28px 18px;
+
+        margin:auto;
+
+        border-radius:25px;
+
+        overflow:hidden;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
     }
+
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    #title{
+
+        font-size:46px;
+
+        line-height:1.1;
+
+        margin:0 0 12px;
+
+        white-space:nowrap;
+    }
+
+
+    /* =========================
+       LOVE TEXT
+    ========================= */
 
     .love-text{
-        font-size:18px;
+
+        font-size:17px;
+
+        line-height:1.55;
+
+        margin:12px 0;
+
+        max-width:100%;
     }
+
+
+    /* =========================
+       QUESTION
+    ========================= */
 
     .question{
-        font-size:23px;
+
+        font-size:22px;
+
+        line-height:1.3;
+
+        margin:16px 0 10px;
     }
 
-    .final-title{
-        font-size:45px;
+
+    .container h2{
+
+        font-size:20px;
+
+        line-height:1.4;
+
+        margin:8px 0 12px;
     }
 
-    .final-text{
+
+    /* =========================
+       MOBILE BUTTONS
+    ========================= */
+
+    .container button{
+
+        padding:13px 30px;
+
+        font-size:18px;
+
+        margin:7px;
+
+        min-width:125px;
+
+        min-height:50px;
+    }
+
+
+    #yes:hover{
+
+        transform:scale(1.05);
+    }
+
+
+    /* =========================
+       RESULT
+    ========================= */
+
+    #result{
+
         font-size:19px;
+
+        line-height:1.5;
+
+        margin-top:12px;
     }
 
-    .final-heart{
-        font-size:75px;
-    }
+
+    /* =========================
+       COMPLIMENTS
+    ========================= */
 
     .compliment{
-        font-size:14px;
+
+        max-width:85vw;
+
+        padding:9px 14px;
+
+        font-size:13px;
+
+        white-space:normal;
+
+        text-align:center;
+
+        line-height:1.3;
+
+        border-radius:25px;
     }
+
+
+    /* =========================
+       HEARTS
+    ========================= */
+
+    .heart{
+
+        font-size:20px;
+    }
+
+
+    /* =========================
+       SPARKLES
+    ========================= */
+
+    .sparkle{
+
+        font-size:16px;
+    }
+
+
+    /* =========================
+       FIREWORKS
+    ========================= */
+
+    .firework{
+
+        font-size:38px;
+    }
+
+
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
+
+    .music{
+
+        bottom:12px;
+
+        right:12px;
+
+        padding:9px 14px;
+
+        font-size:13px;
+
+        border-radius:30px;
+
+        margin:0;
+
+        min-width:auto;
+    }
+
+
+    /* =========================
+       FINAL SCREEN MOBILE
+    ========================= */
+
+    .final-screen{
+
+        padding:20px 15px;
+
+        overflow-y:auto;
+
+        justify-content:center;
+    }
+
+
+    .final-heart{
+
+        font-size:70px;
+
+        margin-bottom:5px;
+    }
+
+
+    .final-title{
+
+        font-size:46px;
+
+        line-height:1.1;
+
+        margin:5px 0 12px;
+    }
+
+
+    .final-text{
+
+        max-width:95%;
+
+        font-size:18px;
+
+        line-height:1.55;
+
+        margin:10px auto;
+    }
+
+
+    /* =========================
+       SMALL PHONE
+    ========================= */
+
+    @media(max-height:700px){
+
+        .container{
+
+            padding:20px 15px;
+        }
+
+
+        #title{
+
+            font-size:40px;
+        }
+
+
+        .love-text{
+
+            font-size:15px;
+
+            line-height:1.4;
+
+            margin:8px 0;
+        }
+
+
+        .question{
+
+            font-size:19px;
+
+            margin:10px 0 6px;
+        }
+
+
+        .container h2{
+
+            font-size:18px;
+
+            margin:5px 0 8px;
+        }
+
+
+        .container button{
+
+            padding:11px 25px;
+
+            font-size:17px;
+
+            min-height:45px;
+        }
+
+
+        .final-heart{
+
+            font-size:60px;
+        }
+
+
+        .final-title{
+
+            font-size:40px;
+        }
+
+
+        .final-text{
+
+            font-size:16px;
+
+            line-height:1.45;
+        }
+
+    }
+
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -702,6 +1123,10 @@ button{
 </div>
 
 
+<!-- =========================
+     OVERLAY
+========================= -->
+
 <div class="overlay"></div>
 
 
@@ -711,7 +1136,9 @@ button{
 
 <div class="container">
 
+
     <h1 id="title"></h1>
+
 
     <p class="love-text">
 
@@ -739,24 +1166,31 @@ button{
     </h2>
 
 
-    <button id="yes" onclick="yesClick()">
+    <div class="buttons">
 
-        YES ❤️
+        <button
+            id="yes"
+            onclick="yesClick()">
 
-    </button>
+            YES ❤️
+
+        </button>
 
 
-    <button
-        id="no"
-        onmouseover="moveButton()"
-        ontouchstart="moveButton()">
+        <button
+            id="no"
+            onmouseover="moveButton()"
+            ontouchstart="moveButton()">
 
-        NO 😅
+            NO 😅
 
-    </button>
+        </button>
+
+    </div>
 
 
     <p id="result"></p>
+
 
 </div>
 
@@ -765,7 +1199,9 @@ button{
      MUSIC BUTTON
 ========================= -->
 
-<button class="music" onclick="startMusic()">
+<button
+    class="music"
+    onclick="startMusic()">
 
     🎵 ჩართე მუსიკა
 
@@ -776,7 +1212,10 @@ button{
      FINAL SCREEN
 ========================= -->
 
-<div class="final-screen" id="finalScreen">
+<div
+    class="final-screen"
+    id="finalScreen">
+
 
     <div class="final-heart">
 
@@ -823,15 +1262,16 @@ button{
 
     </div>
 
+
 </div>
 
 
 <script>
 
 
-/* =========================
+/* =====================================================
    TITLE TYPING
-========================= */
+===================================================== */
 
 let titleText = "Natia ❤️";
 
@@ -848,6 +1288,7 @@ function typing(){
         titleIndex++;
 
         setTimeout(typing,120);
+
     }
 
 }
@@ -856,9 +1297,9 @@ function typing(){
 typing();
 
 
-/* =========================
+/* =====================================================
    MUSIC
-========================= */
+===================================================== */
 
 function startMusic(){
 
@@ -879,28 +1320,33 @@ function startMusic(){
 
     document.querySelector(".music").innerHTML =
         "🎵 მუსიკა ჩართულია ❤️";
+
 }
 
 
-/* =========================
+/* =====================================================
    YES BUTTON
-========================= */
+===================================================== */
 
 function yesClick(){
 
-    /* მუსიკის ჩართვა */
+
+    /* MUSIC */
 
     startMusic();
 
 
-    /* მთავარი ბარათის გაქრობა */
+    /* MAIN CARD */
 
-    document.querySelector(".container").style.opacity="0";
+    document.querySelector(".container").style.opacity =
+        "0";
 
-    document.querySelector(".container").style.transform="scale(.7)";
+
+    document.querySelector(".container").style.transform =
+        "scale(.7)";
 
 
-    /* ფინალური ეკრანის გამოჩენა */
+    /* FINAL SCREEN */
 
     setTimeout(()=>{
 
@@ -911,7 +1357,7 @@ function yesClick(){
     },500);
 
 
-    /* ფეიერვერკები */
+    /* FIREWORKS */
 
     for(let i=0;i<100;i++){
 
@@ -924,7 +1370,7 @@ function yesClick(){
     }
 
 
-    /* ბევრი გული */
+    /* HEARTS */
 
     for(let i=0;i<80;i++){
 
@@ -937,7 +1383,7 @@ function yesClick(){
     }
 
 
-    /* ბრჭყვიალები */
+    /* SPARKLES */
 
     for(let i=0;i<70;i++){
 
@@ -952,9 +1398,9 @@ function yesClick(){
 }
 
 
-/* =========================
+/* =====================================================
    NO BUTTON
-========================= */
+===================================================== */
 
 function moveButton(){
 
@@ -963,19 +1409,61 @@ function moveButton(){
 
 
     let maxX =
-        Math.min(250,window.innerWidth/3);
+        Math.min(
+            250,
+            window.innerWidth/3
+        );
 
 
     let maxY =
-        Math.min(180,window.innerHeight/3);
+        Math.min(
+            180,
+            window.innerHeight/3
+        );
 
 
     let x =
-        Math.random()*(maxX*2)-maxX;
+        Math.random() *
+        (maxX*2) -
+        maxX;
 
 
     let y =
-        Math.random()*(maxY*2)-maxY;
+        Math.random() *
+        (maxY*2) -
+        maxY;
+
+
+    /* MOBILE */
+
+    if(window.innerWidth <= 600){
+
+        maxX =
+            Math.min(
+                100,
+                window.innerWidth/4
+            );
+
+
+        maxY =
+            Math.min(
+                100,
+                window.innerHeight/5
+            );
+
+
+        x =
+            Math.random() *
+            (maxX*2) -
+            maxX;
+
+
+        y =
+            Math.random() *
+            (maxY*2) -
+            maxY;
+
+    }
 
 
     button.style.transform =
@@ -984,9 +1472,9 @@ function moveButton(){
 }
 
 
-/* =========================
+/* =====================================================
    COMPLIMENTS
-========================= */
+===================================================== */
 
 const compliments = [
 
@@ -1050,7 +1538,8 @@ function createCompliment(){
     element.innerHTML =
         compliments[
             Math.floor(
-                Math.random()*compliments.length
+                Math.random() *
+                compliments.length
             )
         ];
 
@@ -1079,14 +1568,17 @@ function createCompliment(){
 }
 
 
-/* ახალი კომპლიმენტი ყოველ 700ms */
+/* NEW COMPLIMENT EVERY 700ms */
 
-setInterval(createCompliment,700);
+setInterval(
+    createCompliment,
+    700
+);
 
 
-/* =========================
+/* =====================================================
    HEARTS
-========================= */
+===================================================== */
 
 function createHeart(){
 
@@ -1094,22 +1586,24 @@ function createHeart(){
         document.createElement("div");
 
 
-    heart.className="heart";
+    heart.className =
+        "heart";
 
 
-    heart.innerHTML =
-        [
-            "❤️",
-            "💕",
-            "💖",
-            "💗",
-            "💘",
-            "💝"
-        ][
-            Math.floor(
-                Math.random()*6
-            )
-        ];
+    heart.innerHTML = [
+
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💘",
+        "💝"
+
+    ][
+        Math.floor(
+            Math.random()*6
+        )
+    ];
 
 
     heart.style.left =
@@ -1136,12 +1630,15 @@ function createHeart(){
 }
 
 
-setInterval(createHeart,350);
+setInterval(
+    createHeart,
+    350
+);
 
 
-/* =========================
+/* =====================================================
    SPARKLES
-========================= */
+===================================================== */
 
 function createSparkle(){
 
@@ -1149,11 +1646,20 @@ function createSparkle(){
         document.createElement("div");
 
 
-    sparkle.className="sparkle";
+    sparkle.className =
+        "sparkle";
 
 
     sparkle.innerHTML =
-        ["✨","⭐","💫","✦","✧"][
+        [
+
+            "✨",
+            "⭐",
+            "💫",
+            "✦",
+            "✧"
+
+        ][
             Math.floor(
                 Math.random()*5
             )
@@ -1180,12 +1686,15 @@ function createSparkle(){
 }
 
 
-setInterval(createSparkle,500);
+setInterval(
+    createSparkle,
+    500
+);
 
 
-/* =========================
+/* =====================================================
    FIREWORKS
-========================= */
+===================================================== */
 
 function createFirework(){
 
@@ -1199,12 +1708,14 @@ function createFirework(){
 
     firework.innerHTML =
         [
+
             "🎆",
             "✨",
             "💥",
             "❤️",
             "💖",
             "💕"
+
         ][
             Math.floor(
                 Math.random()*6
@@ -1231,7 +1742,10 @@ function createFirework(){
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
