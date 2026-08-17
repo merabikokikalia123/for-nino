@@ -12,7 +12,6 @@
 
 <title>Natia ❤️</title>
 
-
 <style>
 
 /* =========================
@@ -30,12 +29,10 @@ body{
     min-height:100%;
 
     margin:0;
-
     padding:0;
 
     overflow:hidden;
 }
-
 
 body{
 
@@ -74,17 +71,14 @@ body{
     overflow:hidden;
 }
 
-
 .youtube-background iframe{
 
     position:absolute;
 
     width:100vw;
-
     height:100vh;
 
     left:50%;
-
     top:50%;
 
     transform:
@@ -100,7 +94,7 @@ body{
 
 
 /* =========================
-   DARK OVERLAY
+   OVERLAY
 ========================= */
 
 .overlay{
@@ -715,33 +709,43 @@ button{
 
     position:fixed;
 
-    bottom:20px;
-
+    top:20px;
     right:20px;
 
-    z-index:30;
+    z-index:9999;
+
+    display:block;
 
     background:
-        rgba(255,40,100,.8);
+        rgba(255,40,100,.9);
 
     color:white;
 
     border:
-        1px solid rgba(255,255,255,.4);
+        1px solid rgba(255,255,255,.5);
 
     padding:10px 18px;
 
     font-size:14px;
 
+    border-radius:30px;
+
     backdrop-filter:blur(10px);
 
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 0 15px rgba(255,40,100,.5);
+
     margin:0;
+
+    cursor:pointer;
 }
 
 
-/* =====================================================
-   MOBILE VERSION
-===================================================== */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:600px){
 
@@ -749,7 +753,6 @@ button{
     body{
 
         width:100%;
-
         height:100%;
 
         min-height:100%;
@@ -867,7 +870,7 @@ button{
 
 
     /* =========================
-       MOBILE BUTTONS
+       BUTTONS
     ========================= */
 
     .container button{
@@ -957,34 +960,67 @@ button{
 
 
     /* =========================
-       MUSIC BUTTON
+       MUSIC MOBILE
     ========================= */
 
     .music{
 
-        bottom:12px;
+        position:fixed;
 
+        top:12px;
         right:12px;
 
-        padding:9px 14px;
+        bottom:auto;
+        left:auto;
 
-        font-size:13px;
+        z-index:9999;
 
-        border-radius:30px;
+        display:block;
+
+        visibility:visible;
+
+        opacity:1;
+
+        padding:10px 15px;
 
         margin:0;
 
         min-width:auto;
+
+        min-height:auto;
+
+        font-size:13px;
+
+        line-height:1;
+
+        border-radius:30px;
+
+        background:
+            rgba(255,40,100,.95);
+
+        color:white;
+
+        border:
+            1px solid rgba(255,255,255,.6);
+
+        box-shadow:
+            0 0 15px rgba(255,40,100,.6);
+
+        backdrop-filter:blur(10px);
+
+        -webkit-backdrop-filter:blur(10px);
+
+        transform:none;
     }
 
 
     /* =========================
-       FINAL SCREEN MOBILE
+       FINAL SCREEN
     ========================= */
 
     .final-screen{
 
-        padding:20px 15px;
+        padding:70px 15px 20px;
 
         overflow-y:auto;
 
@@ -1095,6 +1131,18 @@ button{
             line-height:1.45;
         }
 
+
+        .music{
+
+            top:10px;
+
+            right:10px;
+
+            padding:9px 13px;
+
+            font-size:12px;
+        }
+
     }
 
 }
@@ -1108,7 +1156,7 @@ button{
 
 
 <!-- =========================
-     YOUTUBE MUSIC
+     YOUTUBE
 ========================= -->
 
 <div class="youtube-background">
@@ -1135,7 +1183,6 @@ button{
 ========================= -->
 
 <div class="container">
-
 
     <h1 id="title"></h1>
 
@@ -1191,7 +1238,6 @@ button{
 
     <p id="result"></p>
 
-
 </div>
 
 
@@ -1201,6 +1247,7 @@ button{
 
 <button
     class="music"
+    id="musicButton"
     onclick="startMusic()">
 
     🎵 ჩართე მუსიკა
@@ -1262,12 +1309,10 @@ button{
 
     </div>
 
-
 </div>
 
 
 <script>
-
 
 /* =====================================================
    TITLE TYPING
@@ -1303,9 +1348,8 @@ typing();
 
 function startMusic(){
 
-    let iframe =
+    const iframe =
         document.getElementById("youtubePlayer");
-
 
     iframe.src =
         "https://www.youtube.com/embed/c5wJSDMhmrQ" +
@@ -1318,7 +1362,7 @@ function startMusic(){
         "&playsinline=1";
 
 
-    document.querySelector(".music").innerHTML =
+    document.getElementById("musicButton").innerHTML =
         "🎵 მუსიკა ჩართულია ❤️";
 
 }
@@ -1329,7 +1373,6 @@ function startMusic(){
 ===================================================== */
 
 function yesClick(){
-
 
     /* MUSIC */
 
@@ -1404,7 +1447,7 @@ function yesClick(){
 
 function moveButton(){
 
-    let button =
+    const button =
         document.getElementById("no");
 
 
@@ -1422,48 +1465,34 @@ function moveButton(){
         );
 
 
-    let x =
-        Math.random() *
-        (maxX*2) -
-        maxX;
-
-
-    let y =
-        Math.random() *
-        (maxY*2) -
-        maxY;
-
-
-    /* MOBILE */
-
     if(window.innerWidth <= 600){
 
         maxX =
             Math.min(
-                100,
+                90,
                 window.innerWidth/4
             );
 
 
         maxY =
             Math.min(
-                100,
+                80,
                 window.innerHeight/5
             );
 
-
-        x =
-            Math.random() *
-            (maxX*2) -
-            maxX;
-
-
-        y =
-            Math.random() *
-            (maxY*2) -
-            maxY;
-
     }
+
+
+    const x =
+        Math.random() *
+        (maxX*2) -
+        maxX;
+
+
+    const y =
+        Math.random() *
+        (maxY*2) -
+        maxY;
 
 
     button.style.transform =
@@ -1527,7 +1556,7 @@ const compliments = [
 
 function createCompliment(){
 
-    let element =
+    const element =
         document.createElement("div");
 
 
@@ -1568,8 +1597,6 @@ function createCompliment(){
 }
 
 
-/* NEW COMPLIMENT EVERY 700ms */
-
 setInterval(
     createCompliment,
     700
@@ -1582,7 +1609,7 @@ setInterval(
 
 function createHeart(){
 
-    let heart =
+    const heart =
         document.createElement("div");
 
 
@@ -1642,7 +1669,7 @@ setInterval(
 
 function createSparkle(){
 
-    let sparkle =
+    const sparkle =
         document.createElement("div");
 
 
@@ -1698,7 +1725,7 @@ setInterval(
 
 function createFirework(){
 
-    let firework =
+    const firework =
         document.createElement("div");
 
 
@@ -1742,9 +1769,7 @@ function createFirework(){
 
 }
 
-
 </script>
-
 
 </body>
 
