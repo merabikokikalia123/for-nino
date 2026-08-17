@@ -2,121 +2,1234 @@
 <html lang="ka">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Natia ❤️</title>
+
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:sans-serif;
-  overflow:hidden;
-  color:white;
-  text-align:center;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    margin:0;
+    min-height:100vh;
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    color:white;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 50% 20%,#ff477e 0%,#6d1238 45%,#15000a 100%);
 }
-.container{
-  background:rgba(0,0,0,0.4);
-  padding:40px;
-  border-radius:20px;
-  z-index:2;
-  position:relative;
-}
-button{
-  padding:12px 25px;
-  font-size:18px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  margin:10px;
-}
-#yes{background:#4CAF50;color:white;}
-#no{background:#ff4d6d;color:white;position:relative;}
-.heart{
-  position:absolute;
-  font-size:20px;
-  animation:fall 6s linear infinite;
-}
-@keyframes fall{0%{transform:translateY(-100px);}100%{transform:translateY(100vh);}}
+
+
+/* =========================
+   YOUTUBE MUSIC
+========================= */
+
 .youtube-background{
-  position: fixed;
-  top:0; left:0; width:100%; height:100%; z-index:1; overflow:hidden;
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
 }
+
 .youtube-background iframe{
-  width:100%; height:100%; pointer-events:none;
+    position:absolute;
+
+    width:100vw;
+    height:100vh;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.2);
+
+    border:0;
+
+    opacity:.18;
+
+    pointer-events:none;
 }
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,40,100,.12),
+            rgba(0,0,0,.75)
+        );
+
+    z-index:1;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.container{
+    position:relative;
+
+    width:min(92%,700px);
+
+    padding:45px 35px;
+
+    border-radius:30px;
+
+    background:rgba(35,0,18,.65);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,150,190,.45);
+
+    box-shadow:
+        0 0 30px rgba(255,0,90,.4),
+        0 0 100px rgba(255,0,90,.2);
+
+    z-index:5;
+
+    animation:appear 1.5s ease;
+}
+
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:scale(.8) translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+#title{
+
+    font-family:cursive;
+
+    font-size:65px;
+
+    margin:0 0 15px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff477e,
+        0 0 50px #ff174f;
+
+    animation:
+        titleGlow 2s infinite alternate;
+}
+
+
+@keyframes titleGlow{
+
+    from{
+        text-shadow:
+            0 0 10px #ff477e,
+            0 0 20px #ff477e;
+    }
+
+    to{
+        text-shadow:
+            0 0 20px #fff,
+            0 0 40px #ff477e,
+            0 0 70px #ff174f;
+    }
+}
+
+
+/* =========================
+   LOVE TEXT
+========================= */
+
+.love-text{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    margin:20px 0;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.7);
+}
+
+
+.question{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin:25px 0;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff477e;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+
+    padding:15px 40px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    margin:10px;
+
+    transition:.3s;
+}
+
+
+#yes{
+
+    background:
+        linear-gradient(
+            135deg,
+            #27d96f,
+            #078d3e
+        );
+
+    color:white;
+
+    box-shadow:
+        0 0 15px rgba(0,255,100,.6),
+        0 0 35px rgba(0,255,100,.3);
+}
+
+
+#yes:hover{
+
+    transform:scale(1.15);
+
+    box-shadow:
+        0 0 30px rgba(0,255,100,.9),
+        0 0 70px rgba(0,255,100,.5);
+}
+
+
+#no{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff315c,
+            #bd0038
+        );
+
+    color:white;
+
+    position:relative;
+
+    box-shadow:
+        0 0 20px rgba(255,0,80,.5);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#result{
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    min-height:40px;
+
+    margin-top:25px;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff477e;
+}
+
+
+/* =========================
+   FLOATING COMPLIMENTS
+========================= */
+
+.compliment{
+
+    position:fixed;
+
+    z-index:4;
+
+    pointer-events:none;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,30,90,.18);
+
+    backdrop-filter:blur(8px);
+
+    border:
+        1px solid rgba(255,150,190,.5);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 0 15px rgba(255,40,100,.35);
+
+    animation:
+        complimentMove linear forwards;
+}
+
+
+@keyframes complimentMove{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.7)
+            rotate(-5deg);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:
+            translateY(-30px)
+            scale(1)
+            rotate(3deg);
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translateY(-180px)
+            scale(1.15)
+            rotate(-3deg);
+    }
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart{
+
+    position:fixed;
+
+    z-index:3;
+
+    pointer-events:none;
+
+    animation:
+        heartFall linear forwards;
+}
+
+
+@keyframes heartFall{
+
+    0%{
+
+        transform:
+            translateY(-100px)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle{
+
+    position:fixed;
+
+    z-index:3;
+
+    pointer-events:none;
+
+    color:#fff;
+
+    font-size:20px;
+
+    animation:
+        sparkleAnimation 2s ease-out forwards;
+}
+
+
+@keyframes sparkleAnimation{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            scale(0)
+            rotate(0deg);
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            scale(2)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
 .firework{
-  position:absolute; font-size:40px; animation:explode 1s ease-out forwards;
+
+    position:fixed;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    font-size:50px;
+
+    animation:
+        explode 1.5s ease-out forwards;
 }
-@keyframes explode{0%{opacity:1;transform:scale(0);}100%{opacity:0;transform:scale(4);}}
+
+
+@keyframes explode{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(0);
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(5);
+    }
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,30,90,.5),
+            rgba(30,0,15,.97)
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1.5s;
+}
+
+
+.final-screen.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+
+.final-title{
+
+    font-family:cursive;
+
+    font-size:70px;
+
+    margin:10px;
+
+    text-shadow:
+        0 0 15px #ff477e,
+        0 0 40px #ff174f,
+        0 0 80px #ff174f;
+
+    animation:
+        finalGlow 1.5s infinite alternate;
+}
+
+
+@keyframes finalGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+
+.final-text{
+
+    max-width:750px;
+
+    font-size:25px;
+
+    line-height:1.8;
+
+    margin:20px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5);
+}
+
+
+.final-heart{
+
+    font-size:100px;
+
+    animation:
+        heartBeat 1s infinite;
+}
+
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music{
+
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    z-index:30;
+
+    background:
+        rgba(255,40,100,.8);
+
+    color:white;
+
+    border:
+        1px solid rgba(255,255,255,.4);
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    #title{
+        font-size:48px;
+    }
+
+    .container{
+        padding:30px 18px;
+    }
+
+    .love-text{
+        font-size:18px;
+    }
+
+    .question{
+        font-size:23px;
+    }
+
+    .final-title{
+        font-size:45px;
+    }
+
+    .final-text{
+        font-size:19px;
+    }
+
+    .final-heart{
+        font-size:75px;
+    }
+
+    .compliment{
+        font-size:14px;
+    }
+}
+
 </style>
+
 </head>
+
 <body>
 
 
-<div class="container">
-<h1 id="title"></h1>
-<p>Natia ❤️ ძალიან ძალიან მომწონხარ და უკვე ვგიჟდები შენზე...</p>
-<h3>გამოხვალ ჩემთან ერთად?</h3>
-<button id="yes" onclick="yesClick()">YES ❤️</button>
-<button id="no" onmouseover="moveButton()">NO 😅</button>
-<p id="result"></p>
+<!-- =========================
+     YOUTUBE MUSIC
+========================= -->
+
+<div class="youtube-background">
+
+    <iframe
+        id="youtubePlayer"
+        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
 
 </div>
 
 
+<div class="overlay"></div>
+
+
+<!-- =========================
+     MAIN CARD
+========================= -->
+
+<div class="container">
+
+    <h1 id="title"></h1>
+
+    <p class="love-text">
+
+        შენი თვალები საოცარია ✨<br>
+
+        საოცარი ქალბატონი ხარ ❤️<br>
+
+        და რაც უფრო გიყურებ,
+        მით უფრო მომწონხარ... 🥹❤️
+
+    </p>
+
+
+    <div class="question">
+
+        მინდა რაღაც გკითხო... ❤️
+
+    </div>
+
+
+    <h2>
+
+        გამოხვალ ჩემთან ერთად? 🌹
+
+    </h2>
+
+
+    <button id="yes" onclick="yesClick()">
+
+        YES ❤️
+
+    </button>
+
+
+    <button
+        id="no"
+        onmouseover="moveButton()"
+        ontouchstart="moveButton()">
+
+        NO 😅
+
+    </button>
+
+
+    <p id="result"></p>
+
+</div>
+
+
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
+
+<button class="music" onclick="startMusic()">
+
+    🎵 ჩართე მუსიკა
+
+</button>
+
+
+<!-- =========================
+     FINAL SCREEN
+========================= -->
+
+<div class="final-screen" id="finalScreen">
+
+    <div class="final-heart">
+
+        ❤️
+
+    </div>
+
+
+    <div class="final-title">
+
+        Natia ❤️
+
+    </div>
+
+
+    <div class="final-text">
+
+        შენ არ იცი ახლა როგორ გამაბედნიერე... 🥹❤️
+
+        <br><br>
+
+        შენს თვალებში რაღაც ისეთი არის,
+        რასაც სიტყვებით ვერ ავხსნი...
+
+        <br>
+
+        საოცარი ქალი ხარ,
+        საოცარი ღიმილი გაქვს
+        და მინდა შენს გვერდით
+        კიდევ ძალიან ბევრი ლამაზი
+        მომენტი შევქმნა. 🌹
+
+        <br><br>
+
+        <strong>
+
+            შენს გულს აუცილებლად მოვიგებ. ❤️
+
+        </strong>
+
+        <br><br>
+
+        უბრალოდ მომეცი ამის შანსი... 🥰
+
+    </div>
+
+</div>
+
 
 <script>
-// ნელა დაწერილი ტექსტი
-let text="Natia ❤️", i=0;
+
+
+/* =========================
+   TITLE TYPING
+========================= */
+
+let titleText = "Natia ❤️";
+
+let titleIndex = 0;
+
+
 function typing(){
-  if(i<text.length){
-    document.getElementById("title").innerHTML+=text.charAt(i);
-    i++;
-    setTimeout(typing,100);
-  }
+
+    if(titleIndex < titleText.length){
+
+        document.getElementById("title").innerHTML +=
+            titleText.charAt(titleIndex);
+
+        titleIndex++;
+
+        setTimeout(typing,120);
+    }
+
 }
+
+
 typing();
 
-// YES ღილაკი
+
+/* =========================
+   MUSIC
+========================= */
+
+function startMusic(){
+
+    let iframe =
+        document.getElementById("youtubePlayer");
+
+
+    iframe.src =
+        "https://www.youtube.com/embed/c5wJSDMhmrQ" +
+        "?autoplay=1" +
+        "&mute=0" +
+        "&loop=1" +
+        "&playlist=c5wJSDMhmrQ" +
+        "&controls=0" +
+        "&rel=0" +
+        "&playsinline=1";
+
+
+    document.querySelector(".music").innerHTML =
+        "🎵 მუსიკა ჩართულია ❤️";
+}
+
+
+/* =========================
+   YES BUTTON
+========================= */
+
 function yesClick(){
-  document.getElementById("result").innerHTML="ძალიან გამახარე ❤️🎉";
-  for(let j=0;j<20;j++) createFirework(); // მეტი ფეიერვერკი
+
+    /* მუსიკის ჩართვა */
+
+    startMusic();
+
+
+    /* მთავარი ბარათის გაქრობა */
+
+    document.querySelector(".container").style.opacity="0";
+
+    document.querySelector(".container").style.transform="scale(.7)";
+
+
+    /* ფინალური ეკრანის გამოჩენა */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("finalScreen")
+            .classList.add("show");
+
+    },500);
+
+
+    /* ფეიერვერკები */
+
+    for(let i=0;i<100;i++){
+
+        setTimeout(()=>{
+
+            createFirework();
+
+        },i*50);
+
+    }
+
+
+    /* ბევრი გული */
+
+    for(let i=0;i<80;i++){
+
+        setTimeout(()=>{
+
+            createHeart();
+
+        },i*40);
+
+    }
+
+
+    /* ბრჭყვიალები */
+
+    for(let i=0;i<70;i++){
+
+        setTimeout(()=>{
+
+            createSparkle();
+
+        },i*60);
+
+    }
+
 }
 
-// NO ღილაკი გარბის
+
+/* =========================
+   NO BUTTON
+========================= */
+
 function moveButton(){
-  let b=document.getElementById("no");
-  let x=Math.random()*300-150;
-  let y=Math.random()*300-150;
-  b.style.transform="translate("+x+"px,"+y+"px)";
+
+    let button =
+        document.getElementById("no");
+
+
+    let maxX =
+        Math.min(250,window.innerWidth/3);
+
+
+    let maxY =
+        Math.min(180,window.innerHeight/3);
+
+
+    let x =
+        Math.random()*(maxX*2)-maxX;
+
+
+    let y =
+        Math.random()*(maxY*2)-maxY;
+
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
+
 }
 
-// გულების ანიმაცია
+
+/* =========================
+   COMPLIMENTS
+========================= */
+
+const compliments = [
+
+    "შენი თვალები საოცარია ✨",
+
+    "საოცარი ქალბატონი ხარ ❤️",
+
+    "შენი ღიმილი ყველაფერს ანათებს 😍",
+
+    "შენს სილამაზეს სიტყვებით ვერ ავხსნი ❤️",
+
+    "შენში რაღაც განსაკუთრებულია 💖",
+
+    "შენს გულს აუცილებლად მოვიგებ ❤️",
+
+    "შენი გამოხედვა მაგიჟებს 😍",
+
+    "შენ უბრალოდ ულამაზესი ხარ ❤️",
+
+    "შენთან საუბარი ყოველთვის მიხარია 🥰",
+
+    "შენ ძალიან, ძალიან მომწონხარ ❤️",
+
+    "შენი ღიმილი ჩემი საყვარელი რამეა 😍",
+
+    "შენ განსაკუთრებული ხარ 💕",
+
+    "შენთან ყოფნა მინდა ❤️",
+
+    "შენი სილამაზე მართლა საოცარია ✨",
+
+    "ვგიჟდები შენს თვალებზე 😍",
+
+    "შენ ხარ ის ადამიანი, ვინც გულში დამრჩა ❤️",
+
+    "შენი ხასიათიც ისეთივე ლამაზია, როგორიც შენ ხარ 🌹",
+
+    "შენზე ფიქრი ღიმილს მგვრის 🥰",
+
+    "მინდა კიდევ უფრო კარგად გაგიცნო ❤️",
+
+    "შენი ერთი ღიმილიც კი საკმარისია 💖",
+
+    "შენ ნამდვილად განსაკუთრებული ადამიანი ხარ ❤️",
+
+    "შენს გვერდით ყოფნა მინდა 🌹"
+
+];
+
+
+function createCompliment(){
+
+    let element =
+        document.createElement("div");
+
+
+    element.className =
+        "compliment";
+
+
+    element.innerHTML =
+        compliments[
+            Math.floor(
+                Math.random()*compliments.length
+            )
+        ];
+
+
+    element.style.left =
+        Math.random()*80+10+"vw";
+
+
+    element.style.top =
+        Math.random()*70+10+"vh";
+
+
+    element.style.animationDuration =
+        (3+Math.random()*3)+"s";
+
+
+    document.body.appendChild(element);
+
+
+    setTimeout(()=>{
+
+        element.remove();
+
+    },6500);
+
+}
+
+
+/* ახალი კომპლიმენტი ყოველ 700ms */
+
+setInterval(createCompliment,700);
+
+
+/* =========================
+   HEARTS
+========================= */
+
 function createHeart(){
-  let h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="❤️";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(20+Math.random()*20)+"px";
-  document.body.appendChild(h);
-  setTimeout(()=>{h.remove();},6000);
-}
-setInterval(createHeart,400);
 
-// ფეიერვერკი YES-ზე
+    let heart =
+        document.createElement("div");
+
+
+    heart.className="heart";
+
+
+    heart.innerHTML =
+        [
+            "❤️",
+            "💕",
+            "💖",
+            "💗",
+            "💘",
+            "💝"
+        ][
+            Math.floor(
+                Math.random()*6
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+
+    heart.style.fontSize =
+        (18+Math.random()*35)+"px";
+
+
+    heart.style.animationDuration =
+        (4+Math.random()*5)+"s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },9000);
+
+}
+
+
+setInterval(createHeart,350);
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkle(){
+
+    let sparkle =
+        document.createElement("div");
+
+
+    sparkle.className="sparkle";
+
+
+    sparkle.innerHTML =
+        ["✨","⭐","💫","✦","✧"][
+            Math.floor(
+                Math.random()*5
+            )
+        ];
+
+
+    sparkle.style.left =
+        Math.random()*100+"vw";
+
+
+    sparkle.style.top =
+        Math.random()*100+"vh";
+
+
+    document.body.appendChild(sparkle);
+
+
+    setTimeout(()=>{
+
+        sparkle.remove();
+
+    },2000);
+
+}
+
+
+setInterval(createSparkle,500);
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
 function createFirework(){
-  let f=document.createElement("div");
-  f.className="firework";
-  f.innerHTML="✨";
-  f.style.left=Math.random()*100+"vw";
-  f.style.top=Math.random()*50+"vh";
-  document.body.appendChild(f);
-  setTimeout(()=>{f.remove();},1200);
+
+    let firework =
+        document.createElement("div");
+
+
+    firework.className =
+        "firework";
+
+
+    firework.innerHTML =
+        [
+            "🎆",
+            "✨",
+            "💥",
+            "❤️",
+            "💖",
+            "💕"
+        ][
+            Math.floor(
+                Math.random()*6
+            )
+        ];
+
+
+    firework.style.left =
+        Math.random()*90+"vw";
+
+
+    firework.style.top =
+        Math.random()*75+"vh";
+
+
+    document.body.appendChild(firework);
+
+
+    setTimeout(()=>{
+
+        firework.remove();
+
+    },1500);
+
 }
-
-
 
 </script>
 
