@@ -1,5 +1,6 @@
 
-<!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html lang="ka">
 
 <head>
@@ -11,607 +12,413 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>Happy Birthday Sopo ❤️</title>
-
+<title>Tatia ❤️</title>
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 html,
 body{
     width:100%;
-    min-height:100%;
-    font-family:Arial,sans-serif;
-    color:#fff;
-    background:#080009;
-    overflow-x:hidden;
+    height:100%;
+    margin:0;
 }
 
 body{
+
     min-height:100vh;
+
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    color:white;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #ff477e 0%,
+            #6d1238 45%,
+            #15000a 100%
+        );
 }
 
 
-/* =========================================================
-   BACKGROUND
-========================================================= */
+/* =========================
+   YOUTUBE MUSIC
+========================= */
 
-.bg{
+.youtube-background{
+
     position:fixed;
+
     inset:0;
+
     z-index:0;
 
-    background:
-        radial-gradient(
-            circle at 50% 15%,
-            rgba(255,55,125,.42),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 10% 85%,
-            rgba(255,0,100,.20),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 70%,
-            rgba(180,0,255,.16),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #17000d,
-            #390018,
-            #080009
-        );
+    pointer-events:none;
+
+    overflow:hidden;
 }
 
-.bg:after{
-    content:"";
+.youtube-background iframe{
 
     position:absolute;
-    inset:0;
 
-    opacity:.25;
+    width:100vw;
 
-    background-image:
-        radial-gradient(
-            rgba(255,255,255,.7) 1px,
-            transparent 1px
-        );
+    height:100vh;
 
-    background-size:32px 32px;
-}
+    left:50%;
 
+    top:50%;
 
-.overlay{
-    position:fixed;
-    inset:0;
+    transform:
+        translate(-50%,-50%)
+        scale(1.2);
 
-    z-index:1;
+    border:0;
 
-    background:
-        rgba(8,0,10,.30);
+    opacity:.18;
 
     pointer-events:none;
 }
 
 
-/* =========================================================
-   MUSIC BUTTON
-========================================================= */
+/* =========================
+   DARK OVERLAY
+========================= */
 
-.music{
+.overlay{
+
     position:fixed;
 
-    right:16px;
-    top:16px;
-
-    z-index:9999;
-
-    border:
-        1px solid rgba(255,255,255,.45);
-
-    border-radius:999px;
-
-    padding:11px 17px;
+    inset:0;
 
     background:
-        linear-gradient(
-            135deg,
-            #ff4385,
-            #b90050
+        radial-gradient(
+            circle,
+            rgba(255,40,100,.12),
+            rgba(0,0,0,.75)
         );
 
-    color:#fff;
+    z-index:1;
+}
 
-    font-weight:bold;
 
-    cursor:pointer;
+/* =========================
+   MAIN CARD
+========================= */
+
+.container{
+
+    position:relative;
+
+    width:min(92%,700px);
+
+    margin:0 auto;
+
+    padding:45px 35px;
+
+    border-radius:30px;
+
+    background:
+        rgba(35,0,18,.65);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:
+        1px solid rgba(255,150,190,.45);
 
     box-shadow:
-        0 0 18px rgba(255,40,120,.55);
-
-    transition:.3s;
-}
-
-.music:hover{
-    transform:scale(1.07);
-}
-
-
-/* =========================================================
-   PAGE
-========================================================= */
-
-.page{
-    position:relative;
+        0 0 30px rgba(255,0,90,.4),
+        0 0 100px rgba(255,0,90,.2);
 
     z-index:5;
 
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    padding:
-        80px
-        14px
-        35px;
-}
-
-
-/* =========================================================
-   MAIN CARD
-========================================================= */
-
-.card{
-    width:min(920px,100%);
-
-    padding:
-        42px
-        32px;
-
-    text-align:center;
-
-    border-radius:34px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(65,0,32,.74),
-            rgba(18,0,14,.82)
-        );
-
-    border:
-        1px solid rgba(255,170,205,.38);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 0 40px rgba(255,0,105,.26),
-        0 0 100px rgba(255,0,105,.12);
-
     animation:
-        appear 1.2s ease;
+        appear 1.5s ease;
+
 }
 
 
 @keyframes appear{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(45px)
-            scale(.94);
+            scale(.8)
+            translateY(30px);
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0)
-            scale(1);
+            scale(1)
+            translateY(0);
     }
 
 }
 
 
-/* =========================================================
-   EYEBROW
-========================================================= */
-
-.eyebrow{
-
-    font-size:14px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-
-    color:#ffc1d8;
-
-    margin-bottom:15px;
-
-    text-shadow:
-        0 0 15px #ff4d91;
-}
-
-
-/* =========================================================
+/* =========================
    TITLE
-========================================================= */
+========================= */
 
-.title{
+#title{
 
     font-family:cursive;
 
-    font-size:
-        clamp(
-            52px,
-            9vw,
-            92px
-        );
+    font-size:65px;
 
-    line-height:.95;
+    margin:0 0 15px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffb3cf,
-            #fff
-        );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
+    color:white;
 
     text-shadow:
-        0 0 18px rgba(255,70,130,.7);
+        0 0 10px #ff477e,
+        0 0 25px #ff477e,
+        0 0 50px #ff174f;
 
     animation:
-        glow 2s infinite alternate;
+        titleGlow 2s infinite alternate;
+
 }
 
 
-@keyframes glow{
+@keyframes titleGlow{
+
+    from{
+
+        text-shadow:
+            0 0 10px #ff477e,
+            0 0 20px #ff477e;
+    }
 
     to{
 
-        transform:scale(1.035);
-
-        filter:
-            drop-shadow(
-                0 0 18px
-                rgba(255,40,120,.7)
-            );
+        text-shadow:
+            0 0 20px #fff,
+            0 0 40px #ff477e,
+            0 0 70px #ff174f;
     }
 
 }
 
 
-/* =========================================================
-   NAME
-========================================================= */
+/* =========================
+   LOVE TEXT
+========================= */
 
-.name{
+.love-text{
 
-    font-family:cursive;
+    font-size:22px;
 
-    font-size:
-        clamp(
-            48px,
-            8vw,
-            78px
-        );
+    line-height:1.7;
 
-    margin:
-        12px 0
-        8px;
+    margin:20px 0;
 
     text-shadow:
-        0 0 12px #ff477e,
-        0 0 35px #ff174f,
-        0 0 65px #ff174f;
-}
-
-
-/* =========================================================
-   CAKE
-========================================================= */
-
-.cake{
-
-    font-size:74px;
-
-    margin:
-        12px 0
-        22px;
-
-    animation:
-        float 2s ease-in-out infinite;
-}
-
-
-@keyframes float{
-
-    50%{
-        transform:
-            translateY(-10px);
-    }
+        0 2px 10px rgba(0,0,0,.7);
 
 }
 
 
-/* =========================================================
-   MESSAGE
-========================================================= */
+.question{
 
-.message{
-
-    max-width:760px;
-
-    margin:auto;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-    color:#ffeaf2;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.65);
-}
-
-
-.message strong{
-    color:#ffb7d1;
-}
-
-
-/* =========================================================
-   GALLERY TITLE
-========================================================= */
-
-.gallery-title{
-
-    font-size:29px;
-
-    margin:
-        34px 0
-        18px;
-
-    text-shadow:
-        0 0 18px #ff477e;
-}
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:14px;
-
-    max-width:800px;
-
-    margin:auto;
-}
-
-
-/* =========================================================
-   PHOTO
-========================================================= */
-
-.photo{
-
-    height:330px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    border:
-        2px solid rgba(255,165,200,.42);
-
-    cursor:pointer;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.4);
-
-    transition:.4s;
-}
-
-
-.photo:hover{
-
-    transform:
-        translateY(-7px)
-        scale(1.02);
-
-    box-shadow:
-        0 18px 45px
-        rgba(255,0,100,.35);
-}
-
-
-.photo img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.6s;
-}
-
-
-.photo:hover img{
-    transform:scale(1.06);
-}
-
-
-.photo:after{
-
-    content:"❤️";
-
-    position:absolute;
-
-    right:12px;
-    bottom:10px;
-
-    font-size:25px;
-
-    text-shadow:
-        0 0 12px #ff174f;
-}
-
-
-/* =========================================================
-   SURPRISE BUTTON
-========================================================= */
-
-.surprise{
-
-    margin-top:32px;
-
-    padding:
-        17px
-        32px;
-
-    border:0;
-
-    border-radius:999px;
-
-    color:#fff;
-
-    font-size:18px;
+    font-size:30px;
 
     font-weight:bold;
 
+    margin:25px 0;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff477e;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+
+    padding:15px 40px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:50px;
+
     cursor:pointer;
+
+    margin:10px;
+
+    transition:.3s;
+
+}
+
+
+#yes{
 
     background:
         linear-gradient(
             135deg,
-            #ff397d,
-            #c0004b
+            #27d96f,
+            #078d3e
         );
 
-    box-shadow:
-        0 0 22px
-        rgba(255,0,100,.5);
+    color:white;
 
-    transition:.3s;
+    box-shadow:
+        0 0 15px rgba(0,255,100,.6),
+        0 0 35px rgba(0,255,100,.3);
+
 }
 
 
-.surprise:hover{
+#yes:hover{
 
-    transform:scale(1.08);
+    transform:scale(1.15);
 
     box-shadow:
-        0 0 38px
-        rgba(255,0,100,.75);
+        0 0 30px rgba(0,255,100,.9),
+        0 0 70px rgba(0,255,100,.5);
+
 }
 
 
-/* =========================================================
-   FLOATING TEXT
-========================================================= */
+#no{
 
-.floatText,
-.heart,
-.balloon,
-.sparkle,
-.firework{
+    background:
+        linear-gradient(
+            135deg,
+            #ff315c,
+            #bd0038
+        );
+
+    color:white;
+
+    position:relative;
+
+    box-shadow:
+        0 0 20px rgba(255,0,80,.5);
+
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#result{
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    min-height:40px;
+
+    margin-top:25px;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff477e;
+
+}
+
+
+/* =========================
+   FLOATING COMPLIMENTS
+========================= */
+
+.compliment{
 
     position:fixed;
 
+    z-index:4;
+
     pointer-events:none;
 
-    z-index:4;
-}
-
-
-/* =========================================================
-   COMPLIMENTS
-========================================================= */
-
-.floatText{
-
-    padding:
-        10px
-        17px;
+    padding:12px 20px;
 
     border-radius:30px;
 
-    font-weight:bold;
-
-    font-size:16px;
-
     background:
-        rgba(255,30,95,.17);
-
-    border:
-        1px solid
-        rgba(255,170,205,.42);
+        rgba(255,30,90,.18);
 
     backdrop-filter:blur(8px);
 
+    border:
+        1px solid rgba(255,150,190,.5);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 0 15px rgba(255,40,100,.35);
+
     animation:
-        rise 5s linear forwards;
+        complimentMove linear forwards;
+
 }
 
 
-@keyframes rise{
+@keyframes complimentMove{
 
     0%{
 
         opacity:0;
 
         transform:
-            translateY(35px)
-            scale(.7);
+            translateY(40px)
+            scale(.7)
+            rotate(-5deg);
+
     }
 
-    15%{
+    10%{
+
         opacity:1;
+
     }
 
-    70%{
+    50%{
 
         opacity:1;
 
         transform:
-            translateY(-80px)
-            scale(1);
+            translateY(-30px)
+            scale(1)
+            rotate(3deg);
+
+    }
+
+    90%{
+
+        opacity:1;
+
     }
 
     100%{
@@ -620,107 +427,86 @@ body{
 
         transform:
             translateY(-180px)
-            scale(1.1);
+            scale(1.15)
+            rotate(-3deg);
+
     }
 
 }
 
 
-/* =========================================================
+/* =========================
    HEARTS
-========================================================= */
+========================= */
 
 .heart{
 
-    top:-55px;
+    position:fixed;
+
+    z-index:3;
+
+    pointer-events:none;
 
     animation:
-        fall linear forwards;
+        heartFall linear forwards;
+
 }
 
 
-@keyframes fall{
+@keyframes heartFall{
 
     0%{
 
+        transform:
+            translateY(-100px)
+            rotate(0deg);
+
         opacity:0;
 
-        transform:
-            translateY(-50px)
-            rotate(0);
     }
 
     10%{
+
         opacity:1;
+
     }
 
     100%{
-
-        opacity:0;
 
         transform:
             translateY(110vh)
             rotate(360deg);
-    }
-
-}
-
-
-/* =========================================================
-   BALLOONS
-========================================================= */
-
-.balloon{
-
-    bottom:-100px;
-
-    font-size:55px;
-
-    animation:
-        balloon linear forwards;
-}
-
-
-@keyframes balloon{
-
-    0%{
 
         opacity:0;
 
-        transform:
-            translateY(0);
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-            translateY(-120vh)
-            rotate(8deg);
     }
 
 }
 
 
-/* =========================================================
+/* =========================
    SPARKLES
-========================================================= */
+========================= */
 
 .sparkle{
+
+    position:fixed;
+
+    z-index:3;
+
+    pointer-events:none;
+
+    color:#fff;
 
     font-size:20px;
 
     animation:
-        spark 1.8s ease-out forwards;
+        sparkleAnimation 2s ease-out forwards;
+
 }
 
 
-@keyframes spark{
+@keyframes sparkleAnimation{
 
     0%{
 
@@ -728,11 +514,14 @@ body{
 
         transform:
             scale(0)
-            rotate(0);
+            rotate(0deg);
+
     }
 
     30%{
+
         opacity:1;
+
     }
 
     100%{
@@ -742,404 +531,325 @@ body{
         transform:
             scale(2)
             rotate(180deg);
+
     }
 
 }
 
 
-/* =========================================================
+/* =========================
    FIREWORKS
-========================================================= */
+========================= */
 
 .firework{
 
-    font-size:48px;
+    position:fixed;
 
-    z-index:50;
+    z-index:20;
+
+    pointer-events:none;
+
+    font-size:50px;
 
     animation:
-        boom 1.5s ease-out forwards;
+        explode 1.5s ease-out forwards;
+
 }
 
 
-@keyframes boom{
+@keyframes explode{
 
     0%{
 
         opacity:1;
 
-        transform:
-            scale(.2);
+        transform:scale(0);
+
     }
 
     50%{
 
         opacity:1;
 
-        transform:
-            scale(2);
     }
 
     100%{
 
         opacity:0;
 
-        transform:
-            scale(5);
+        transform:scale(5);
+
     }
 
 }
 
 
-/* =========================================================
-   PHOTO VIEWER
-========================================================= */
+/* =========================
+   FINAL SCREEN
+========================= */
 
-.viewer{
+.final-screen{
 
     position:fixed;
 
     inset:0;
 
-    z-index:10000;
+    z-index:100;
 
     display:flex;
 
-    align-items:center;
     justify-content:center;
 
-    padding:20px;
-
-    background:
-        rgba(0,0,0,.9);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.35s;
-}
-
-
-.viewer.show{
-
-    opacity:1;
-
-    pointer-events:auto;
-}
-
-
-.viewer img{
-
-    max-width:95vw;
-
-    max-height:88vh;
-
-    object-fit:contain;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 0 45px
-        rgba(255,0,100,.45);
-}
-
-
-.close{
-
-    position:absolute;
-
-    right:22px;
-    top:15px;
-
-    border:0;
-
-    background:none;
-
-    color:#fff;
-
-    font-size:44px;
-
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   FINAL SCREEN
-========================================================= */
-
-.final{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:9000;
-
-    display:flex;
+    align-items:center;
 
     flex-direction:column;
 
-    align-items:center;
-
-    justify-content:center;
-
-    padding:
-        30px
-        16px;
+    padding:30px;
 
     text-align:center;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(255,40,110,.62),
-            rgba(12,0,9,.98)
+            rgba(255,30,90,.5),
+            rgba(30,0,15,.97)
         );
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:1s;
+    transition:1.5s;
 
-    overflow-y:auto;
 }
 
 
-.final.show{
+.final-screen.show{
 
     opacity:1;
 
     pointer-events:auto;
-}
-
-
-.finalHeart{
-
-    font-size:95px;
-
-    animation:
-        beat 1s infinite;
-}
-
-
-@keyframes beat{
-
-    50%{
-        transform:scale(1.24);
-    }
 
 }
 
 
-.finalTitle{
+.final-title{
 
     font-family:cursive;
 
-    font-size:
-        clamp(
-            50px,
-            9vw,
-            88px
-        );
+    font-size:70px;
+
+    margin:10px;
 
     text-shadow:
-        0 0 20px #ff477e,
-        0 0 55px #ff174f;
+        0 0 15px #ff477e,
+        0 0 40px #ff174f,
+        0 0 80px #ff174f;
+
+    animation:
+        finalGlow 1.5s infinite alternate;
+
 }
 
 
-.finalSub{
+@keyframes finalGlow{
 
-    font-size:23px;
+    from{
 
-    color:#ffc0d6;
+        transform:scale(1);
 
-    margin:
-        8px 0
-        20px;
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
 }
 
 
-.finalText{
+.final-text{
 
-    max-width:760px;
+    max-width:750px;
 
-    font-size:21px;
+    font-size:25px;
 
     line-height:1.8;
+
+    margin:20px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5);
+
 }
 
 
-.back{
+.final-heart{
 
-    margin-top:28px;
+    font-size:100px;
 
-    padding:
-        13px
-        25px;
+    animation:
+        heartBeat 1s infinite;
 
-    border:0;
-
-    border-radius:999px;
-
-    background:#fff;
-
-    color:#c0004b;
-
-    font-weight:bold;
-
-    cursor:pointer;
 }
 
 
-/* =========================================================
+@keyframes heartBeat{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.25);
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    z-index:30;
+
+    background:
+        rgba(255,40,100,.8);
+
+    color:white;
+
+    border:
+        1px solid rgba(255,255,255,.4);
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-    .music{
+    body{
 
-        top:10px;
-        right:10px;
+        overflow:hidden;
 
-        padding:
-            9px
-            13px;
-
-        font-size:12px;
     }
 
 
-    .page{
-
-        padding:
-            64px
-            10px
-            25px;
-    }
-
-
-    .card{
-
-        padding:
-            30px
-            14px;
-
-        border-radius:27px;
-    }
-
-
-    .eyebrow{
-
-        font-size:11px;
-
-        letter-spacing:3px;
-    }
-
-
-    .title{
-        font-size:48px;
-    }
-
-
-    .name{
-        font-size:43px;
-    }
-
-
-    .cake{
-        font-size:60px;
-    }
-
-
-    .message{
-
-        font-size:17px;
-
-        line-height:1.65;
-    }
-
-
-    .gallery-title{
-
-        font-size:24px;
-
-        margin-top:28px;
-    }
-
-
-    .gallery{
-
-        gap:9px;
-    }
-
-
-    .photo{
-
-        height:230px;
-
-        border-radius:17px;
-    }
-
-
-    .surprise{
+    .container{
 
         width:92%;
 
-        font-size:16px;
+        padding:30px 18px;
 
-        padding:
-            15px
-            18px;
+        border-radius:25px;
+
     }
 
 
-    .finalHeart{
-        font-size:70px;
+    #title{
+
+        font-size:48px;
+
     }
 
 
-    .finalSub{
+    .love-text{
+
         font-size:18px;
-    }
-
-
-    .finalText{
-
-        font-size:17px;
 
         line-height:1.6;
-    }
 
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media(max-width:390px){
-
-    .title{
-        font-size:42px;
     }
 
 
-    .name{
-        font-size:38px;
+    .question{
+
+        font-size:23px;
+
     }
 
 
-    .message{
-        font-size:15px;
+    .container h2{
+
+        font-size:21px;
+
     }
 
 
-    .photo{
-        height:190px;
+    button{
+
+        padding:13px 30px;
+
+        font-size:18px;
+
+    }
+
+
+    .final-title{
+
+        font-size:45px;
+
+    }
+
+
+    .final-text{
+
+        font-size:19px;
+
+        line-height:1.6;
+
+        margin:10px;
+
+    }
+
+
+    .final-heart{
+
+        font-size:75px;
+
+    }
+
+
+    .compliment{
+
+        font-size:14px;
+
+        padding:9px 14px;
+
+    }
+
+
+    .music{
+
+        bottom:15px;
+
+        right:15px;
+
+        padding:9px 14px;
+
+        font-size:13px;
+
     }
 
 }
@@ -1152,280 +862,152 @@ body{
 <body>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+<!-- =========================
+     YOUTUBE MUSIC
+========================= -->
 
-<div class="bg"></div>
+<div class="youtube-background">
+
+    <iframe
+        id="youtubePlayer"
+        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+
+<!-- DARK OVERLAY -->
 
 <div class="overlay"></div>
 
 
-<!-- =====================================================
-     MUSIC
-===================================================== -->
+<!-- =========================
+     MAIN CARD
+========================= -->
 
-<div
-    class="youtube-background"
-    style="display:none"
->
+<div class="container">
 
-    <iframe
-        id="youtubePlayer"
+    <h1 id="title"></h1>
 
-        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
 
-        allow="autoplay; encrypted-media"
+    <p class="love-text">
 
-        style="
-            position:fixed;
-            width:1px;
-            height:1px;
-            opacity:0;
-            pointer-events:none;
-        "
-    ></iframe>
+        შენი თვალები საოცარია ✨<br>
+
+        საოცარი ქალბატონი ხარ ❤️<br>
+
+        და რაც უფრო გიყურებ,
+        მით უფრო მომწონხარ... 🥹❤️
+
+    </p>
+
+
+    <div class="question">
+
+        მინდა რაღაც გკითხო... ❤️
+
+    </div>
+
+
+    <h2>
+
+        გამოხვალ ჩემთან ერთად? 🌹
+
+    </h2>
+
+
+    <button
+        id="yes"
+        onclick="yesClick()">
+
+        YES ❤️
+
+    </button>
+
+
+    <button
+        id="no"
+        onmouseover="moveButton()"
+        ontouchstart="moveButton()">
+
+        NO 😅
+
+    </button>
+
+
+    <p id="result"></p>
 
 </div>
 
 
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
+
 <button
     class="music"
-    id="musicButton"
-    onclick="startMusic()"
->
+    onclick="startMusic()">
 
-    🎵 ჩართე მუსიკა ❤️
+    🎵 ჩართე მუსიკა
 
 </button>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
-<main class="page">
-
-<section class="card">
-
-
-    <div class="eyebrow">
-
-        ✨ A Special Day ✨
-
-    </div>
-
-
-    <div class="title">
-
-        Happy Birthday
-
-    </div>
-
-
-    <div class="name">
-
-        Sopo ❤️
-
-    </div>
-
-
-    <div class="cake">
-
-        🎂
-
-    </div>
-
-
-    <div class="message">
-
-        დღეს უბრალოდ ჩვეულებრივი დღე არ არის... ❤️
-
-        <br><br>
-
-        დღეს იმ ადამიანის დაბადების დღეა,
-        რომლის ღიმილიც ერთ ჩვეულებრივ დღესაც კი
-        განსაკუთრებულს ხდის. ✨
-
-        <br><br>
-
-        <strong>
-            გილოცავ დაბადების დღეს, სოპო! 🎂❤️
-        </strong>
-
-        <br>
-
-        მინდა, რომ ყოველთვის ასეთი ლამაზი,
-        ბედნიერი და გაღიმებული იყო. 🌹
-
-        <br><br>
-
-        ყველა შენი სურვილი აგსრულებოდეს
-        და წინ მხოლოდ ლამაზი დღეები გქონდეს. 💖
-
-    </div>
-
-
-    <!-- =================================================
-         GALLERY
-    ================================================= -->
-
-    <div class="gallery-title">
-
-        📸 ლამაზი მოგონებები ❤️
-
-    </div>
-
-
-    <div class="gallery">
-
-
-        <div
-            class="photo"
-            onclick="openPhoto('SOPHY1.jpg')"
-        >
-
-            <img
-                src="SOPHY1.jpg"
-                alt="Sopo"
-            >
-
-        </div>
-
-
-        <div
-            class="photo"
-            onclick="openPhoto('SOPHY2.jpg')"
-        >
-
-            <img
-                src="SOPHY2.jpg"
-                alt="Sopo"
-            >
-
-        </div>
-
-
-    </div>
-
-
-    <!-- =================================================
-         SURPRISE
-    ================================================= -->
-
-    <button
-        class="surprise"
-        onclick="showSurprise()"
-    >
-
-        🎁 გახსენი შენი სიურპრიზი ❤️
-
-    </button>
-
-
-</section>
-
-</main>
-
-
-<!-- =====================================================
-     PHOTO VIEWER
-===================================================== -->
+<!-- =========================
+     FINAL SCREEN
+========================= -->
 
 <div
-    class="viewer"
-    id="viewer"
-    onclick="closeViewer(event)"
->
+    class="final-screen"
+    id="finalScreen">
 
 
-    <button
-        class="close"
-        onclick="closeViewer()"
-    >
-
-        ×
-
-    </button>
-
-
-    <img
-        id="viewerImg"
-        src=""
-        alt="Sopo photo"
-    >
-
-
-</div>
-
-
-<!-- =====================================================
-     FINAL SURPRISE
-===================================================== -->
-
-<div
-    class="final"
-    id="final"
->
-
-
-    <div class="finalHeart">
+    <div class="final-heart">
 
         ❤️
 
     </div>
 
 
-    <div class="finalTitle">
+    <div class="final-title">
 
-        Happy Birthday
-
-    </div>
-
-
-    <div class="finalSub">
-
-        Sopo 🌹
+        Tatia ❤️
 
     </div>
 
 
-    <div class="finalText">
+    <div class="final-text">
 
-        მინდა, ეს ახალი წელი შენს ცხოვრებაში
-        ყველაზე ლამაზი იყოს. 🥹❤️
-
-        <br><br>
-
-        ყველა სურვილი აგსრულებოდეს,
-        ყველა დღე ღიმილით დაგეწყოს
-        და ცხოვრებაში ყოველთვის
-        გქონდეს მიზეზი ბედნიერებისთვის. ✨
+        შენ არ იცი ახლა როგორ გამაბედნიერე... 🥹❤️
 
         <br><br>
 
-        შენ ნამდვილად განსაკუთრებული ადამიანი ხარ
-        და იმსახურებ მხოლოდ ყველაზე ლამაზ
-        და ბედნიერ მომენტებს. 🌹
+        შენს თვალებში რაღაც ისეთი არის,
+        რასაც სიტყვებით ვერ ავხსნი...
+
+        <br>
+
+        საოცარი ქალი ხარ,
+        საოცარი ღიმილი გაქვს
+        და მინდა შენს გვერდით
+        კიდევ ძალიან ბევრი ლამაზი
+        მომენტი შევქმნა. 🌹
 
         <br><br>
 
         <strong>
-            გილოცავ დაბადების დღეს! 🎂🎉❤️
+
+            შენს გულს აუცილებლად მოვიგებ. ❤️
+
         </strong>
 
+        <br><br>
+
+        უბრალოდ მომეცი ამის შანსი... 🥰
+
     </div>
-
-
-    <button
-        class="back"
-        onclick="closeSurprise()"
-    >
-
-        ❤️ უკან
-
-    </button>
-
 
 </div>
 
@@ -1433,100 +1015,43 @@ body{
 <script>
 
 
-/* =========================================================
-   COMPLIMENTS
-========================================================= */
+/* =========================
+   TITLE TYPING
+========================= */
 
-const compliments = [
+let titleText = "Tatia ❤️";
 
-    "შენი ღიმილი საოცარია 😍",
-
-    "საოცარი ადამიანი ხარ ❤️",
-
-    "შენი თვალები ყველაფერს ამბობენ ✨",
-
-    "შენ ნამდვილად განსაკუთრებული ხარ 💖",
-
-    "შენი სილამაზე სიტყვებს სცდება 🌹",
-
-    "დღეს განსაკუთრებით ლამაზი ხარ 🥰",
-
-    "იყავი ყოველთვის ასეთი ბედნიერი ❤️",
-
-    "შენ იმსახურებ ყველაზე ლამაზ დღეებს ✨",
-
-    "შენს გვერდით ყოფნა ბედნიერებაა ❤️",
-
-    "შენში რაღაც განსაკუთრებულია 💕",
-
-    "შენი ერთი ღიმილიც კი საკმარისია 😍",
-
-    "გილოცავ დაბადების დღეს, ლამაზო! 🎂",
-
-    "დღეს შენი დღეა! 🎉❤️",
-
-    "სიყვარული და ბედნიერება შენს ცხოვრებაში 💖",
-
-    "ყველა სურვილი აგსრულებოდეს 🌹"
-
-];
+let titleIndex = 0;
 
 
-/* =========================================================
-   PHOTO VIEWER
-========================================================= */
+function typing(){
 
-function openPhoto(src){
+    if(titleIndex < titleText.length){
 
-    document
-        .getElementById("viewerImg")
-        .src = src;
+        document.getElementById("title").innerHTML +=
+            titleText.charAt(titleIndex);
 
+        titleIndex++;
 
-    document
-        .getElementById("viewer")
-        .classList.add("show");
-
-}
-
-
-function closeViewer(event){
-
-    if(
-        event &&
-        event.target &&
-        event.target.id === "viewerImg"
-    ){
-
-        return;
+        setTimeout(typing,120);
 
     }
 
-
-    document
-        .getElementById("viewer")
-        .classList.remove("show");
-
 }
 
 
-/* =========================================================
+typing();
+
+
+
+/* =========================
    MUSIC
-========================================================= */
+========================= */
 
 function startMusic(){
 
-    const iframe =
-        document.getElementById(
-            "youtubePlayer"
-        );
-
-
-    document
-        .querySelector(
-            ".youtube-background"
-        )
-        .style.display = "block";
+    let iframe =
+        document.getElementById("youtubePlayer");
 
 
     iframe.src =
@@ -1540,114 +1065,200 @@ function startMusic(){
         "&playsinline=1";
 
 
-    document
-        .getElementById(
-            "musicButton"
-        )
-        .innerHTML =
+    document.querySelector(".music").innerHTML =
         "🎵 მუსიკა ჩართულია ❤️";
 
 }
 
 
-/* =========================================================
-   SURPRISE
-========================================================= */
 
-function showSurprise(){
+/* =========================
+   YES BUTTON
+========================= */
 
-    document
-        .getElementById("final")
-        .classList
-        .add("show");
+function yesClick(){
 
+
+    /* მუსიკის ჩართვა */
 
     startMusic();
 
 
-    for(
-        let i = 0;
-        i < 90;
-        i++
-    ){
 
-        setTimeout(
-            createFirework,
-            i * 45
-        );
+    /* მთავარი ბარათის გაქრობა */
 
-    }
+    document.querySelector(".container").style.opacity =
+        "0";
+
+    document.querySelector(".container").style.transform =
+        "scale(.7)";
 
 
-    for(
-        let i = 0;
-        i < 110;
-        i++
-    ){
 
-        setTimeout(
-            createHeart,
-            i * 30
-        );
+    /* ფინალური ეკრანის გამოჩენა */
 
-    }
+    setTimeout(()=>{
+
+        document
+            .getElementById("finalScreen")
+            .classList.add("show");
+
+    },500);
 
 
-    for(
-        let i = 0;
-        i < 35;
-        i++
-    ){
 
-        setTimeout(
-            createBalloon,
-            i * 110
-        );
+    /* ფეიერვერკები */
+
+    for(let i=0;i<100;i++){
+
+        setTimeout(()=>{
+
+            createFirework();
+
+        },i*50);
 
     }
 
 
-    for(
-        let i = 0;
-        i < 100;
-        i++
-    ){
 
-        setTimeout(
-            createSparkle,
-            i * 45
-        );
+    /* ბევრი გული */
+
+    for(let i=0;i<80;i++){
+
+        setTimeout(()=>{
+
+            createHeart();
+
+        },i*40);
+
+    }
+
+
+
+    /* ბრჭყვიალები */
+
+    for(let i=0;i<70;i++){
+
+        setTimeout(()=>{
+
+            createSparkle();
+
+        },i*60);
 
     }
 
 }
 
 
-function closeSurprise(){
 
-    document
-        .getElementById("final")
-        .classList
-        .remove("show");
+/* =========================
+   NO BUTTON
+========================= */
+
+function moveButton(){
+
+    let button =
+        document.getElementById("no");
+
+
+    let maxX =
+        Math.min(
+            250,
+            window.innerWidth/3
+        );
+
+
+    let maxY =
+        Math.min(
+            180,
+            window.innerHeight/3
+        );
+
+
+    let x =
+        Math.random() *
+        (maxX*2) -
+        maxX;
+
+
+    let y =
+        Math.random() *
+        (maxY*2) -
+        maxY;
+
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
 
 }
 
 
-/* =========================================================
-   FLOATING COMPLIMENTS
-========================================================= */
 
-function createFloating(){
+/* =========================
+   COMPLIMENTS
+========================= */
 
-    const el =
+const compliments = [
+
+    "შენი თვალები საოცარია ✨",
+
+    "საოცარი ქალბატონი ხარ ❤️",
+
+    "შენი ღიმილი ყველაფერს ანათებს 😍",
+
+    "შენს სილამაზეს სიტყვებით ვერ ავხსნი ❤️",
+
+    "შენში რაღაც განსაკუთრებულია 💖",
+
+    "შენს გულს აუცილებლად მოვიგებ ❤️",
+
+    "შენი გამოხედვა მაგიჟებს 😍",
+
+    "შენ უბრალოდ ულამაზესი ხარ ❤️",
+
+    "შენთან საუბარი ყოველთვის მიხარია 🥰",
+
+    "შენ ძალიან, ძალიან მომწონხარ ❤️",
+
+    "შენი ღიმილი ჩემი საყვარელი რამეა 😍",
+
+    "შენ განსაკუთრებული ხარ 💕",
+
+    "შენთან ყოფნა მინდა ❤️",
+
+    "შენი სილამაზე მართლა საოცარია ✨",
+
+    "ვგიჟდები შენს თვალებზე 😍",
+
+    "შენ ხარ ის ადამიანი, ვინც გულში დამრჩა ❤️",
+
+    "შენი ხასიათიც ისეთივე ლამაზია, როგორიც შენ ხარ 🌹",
+
+    "შენზე ფიქრი ღიმილს მგვრის 🥰",
+
+    "მინდა კიდევ უფრო კარგად გაგიცნო ❤️",
+
+    "შენი ერთი ღიმილიც კი საკმარისია 💖",
+
+    "შენ ნამდვილად განსაკუთრებული ადამიანი ხარ ❤️",
+
+    "შენს გვერდით ყოფნა მინდა 🌹"
+
+];
+
+
+
+function createCompliment(){
+
+    let element =
         document.createElement("div");
 
 
-    el.className =
-        "floatText";
+    element.className =
+        "compliment";
 
 
-    el.innerHTML =
+    element.innerHTML =
         compliments[
             Math.floor(
                 Math.random() *
@@ -1656,58 +1267,55 @@ function createFloating(){
         ];
 
 
-    el.style.left =
-        (
-            Math.random() * 78 + 10
-        ) + "vw";
+    element.style.left =
+        Math.random()*80+10+"vw";
 
 
-    el.style.top =
-        (
-            Math.random() * 68 + 10
-        ) + "vh";
+    element.style.top =
+        Math.random()*70+10+"vh";
 
 
-    el.style.animationDuration =
-        (
-            3 + Math.random() * 3
-        ) + "s";
+    element.style.animationDuration =
+        (3+Math.random()*3)+"s";
 
 
-    document
-        .body
-        .appendChild(el);
+    document.body.appendChild(element);
 
 
-    setTimeout(
-        () => el.remove(),
-        6500
-    );
+    setTimeout(()=>{
+
+        element.remove();
+
+    },6500);
 
 }
 
 
+
+/* ახალი კომპლიმენტი ყოველ 700ms */
+
 setInterval(
-    createFloating,
-    1100
+    createCompliment,
+    700
 );
 
 
-/* =========================================================
+
+/* =========================
    HEARTS
-========================================================= */
+========================= */
 
 function createHeart(){
 
-    const el =
+    let heart =
         document.createElement("div");
 
 
-    el.className =
+    heart.className =
         "heart";
 
 
-    el.innerHTML =
+    heart.innerHTML =
         [
             "❤️",
             "💕",
@@ -1717,128 +1325,60 @@ function createHeart(){
             "💝"
         ][
             Math.floor(
-                Math.random() * 6
+                Math.random()*6
             )
         ];
 
 
-    el.style.left =
-        Math.random() * 100 + "vw";
+    heart.style.left =
+        Math.random()*100+"vw";
 
 
-    el.style.fontSize =
-        (
-            18 +
-            Math.random() * 35
-        ) + "px";
+    heart.style.fontSize =
+        (18+Math.random()*35)+"px";
 
 
-    el.style.animationDuration =
-        (
-            4 +
-            Math.random() * 5
-        ) + "s";
+    heart.style.animationDuration =
+        (4+Math.random()*5)+"s";
 
 
-    document
-        .body
-        .appendChild(el);
+    document.body.appendChild(heart);
 
 
-    setTimeout(
-        () => el.remove(),
-        10000
-    );
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },9000);
 
 }
 
+
+
+/* ახალი გული ყოველ 350ms */
 
 setInterval(
     createHeart,
-    650
+    350
 );
 
 
-/* =========================================================
-   BALLOONS
-========================================================= */
 
-function createBalloon(){
-
-    const el =
-        document.createElement("div");
-
-
-    el.className =
-        "balloon";
-
-
-    el.innerHTML =
-        [
-            "🎈",
-            "🎈",
-            "🎈",
-            "🎀",
-            "💗"
-        ][
-            Math.floor(
-                Math.random() * 5
-            )
-        ];
-
-
-    el.style.left =
-        Math.random() * 95 + "vw";
-
-
-    el.style.fontSize =
-        (
-            40 +
-            Math.random() * 35
-        ) + "px";
-
-
-    el.style.animationDuration =
-        (
-            6 +
-            Math.random() * 6
-        ) + "s";
-
-
-    document
-        .body
-        .appendChild(el);
-
-
-    setTimeout(
-        () => el.remove(),
-        13000
-    );
-
-}
-
-
-setInterval(
-    createBalloon,
-    3000
-);
-
-
-/* =========================================================
+/* =========================
    SPARKLES
-========================================================= */
+========================= */
 
 function createSparkle(){
 
-    const el =
+    let sparkle =
         document.createElement("div");
 
 
-    el.className =
+    sparkle.className =
         "sparkle";
 
 
-    el.innerHTML =
+    sparkle.innerHTML =
         [
             "✨",
             "⭐",
@@ -1847,53 +1387,56 @@ function createSparkle(){
             "✧"
         ][
             Math.floor(
-                Math.random() * 5
+                Math.random()*5
             )
         ];
 
 
-    el.style.left =
-        Math.random() * 100 + "vw";
+    sparkle.style.left =
+        Math.random()*100+"vw";
 
 
-    el.style.top =
-        Math.random() * 100 + "vh";
+    sparkle.style.top =
+        Math.random()*100+"vh";
 
 
-    document
-        .body
-        .appendChild(el);
+    document.body.appendChild(sparkle);
 
 
-    setTimeout(
-        () => el.remove(),
-        2000
-    );
+    setTimeout(()=>{
+
+        sparkle.remove();
+
+    },2000);
 
 }
 
 
+
+/* ახალი ბრჭყვიალა ყოველ 500ms */
+
 setInterval(
     createSparkle,
-    650
+    500
 );
 
 
-/* =========================================================
+
+/* =========================
    FIREWORKS
-========================================================= */
+========================= */
 
 function createFirework(){
 
-    const el =
+    let firework =
         document.createElement("div");
 
 
-    el.className =
+    firework.className =
         "firework";
 
 
-    el.innerHTML =
+    firework.innerHTML =
         [
             "🎆",
             "✨",
@@ -1903,63 +1446,29 @@ function createFirework(){
             "💕"
         ][
             Math.floor(
-                Math.random() * 6
+                Math.random()*6
             )
         ];
 
 
-    el.style.left =
-        Math.random() * 90 + "vw";
+    firework.style.left =
+        Math.random()*90+"vw";
 
 
-    el.style.top =
-        Math.random() * 75 + "vh";
+    firework.style.top =
+        Math.random()*75+"vh";
 
 
-    document
-        .body
-        .appendChild(el);
+    document.body.appendChild(firework);
 
 
-    setTimeout(
-        () => el.remove(),
-        1600
-    );
+    setTimeout(()=>{
 
-}
+        firework.remove();
 
-
-/* =========================================================
-   START EFFECTS
-========================================================= */
-
-for(
-    let i = 0;
-    i < 12;
-    i++
-){
-
-    setTimeout(
-        createHeart,
-        i * 220
-    );
+    },1500);
 
 }
-
-
-for(
-    let i = 0;
-    i < 8;
-    i++
-){
-
-    setTimeout(
-        createBalloon,
-        i * 400
-    );
-
-}
-
 
 </script>
 
