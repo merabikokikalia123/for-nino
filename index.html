@@ -11,7 +11,8 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>Happy Birthday Sophya ❤️</title>
+<title>Happy Birthday Sopo ❤️</title>
+
 
 <style>
 
@@ -30,110 +31,79 @@ body{
     width:100%;
     min-height:100%;
     font-family:Arial,sans-serif;
+    color:#fff;
+    background:#080009;
     overflow-x:hidden;
-    background:#08000b;
-    color:white;
 }
 
 body{
     min-height:100vh;
 }
 
+
 /* =========================================================
    BACKGROUND
 ========================================================= */
 
-.background{
+.bg{
     position:fixed;
     inset:0;
     z-index:0;
 
     background:
         radial-gradient(
-            circle at 50% 20%,
-            rgba(255,75,135,.45),
+            circle at 50% 15%,
+            rgba(255,55,125,.42),
             transparent 35%
         ),
         radial-gradient(
-            circle at 10% 80%,
-            rgba(255,0,100,.18),
+            circle at 10% 85%,
+            rgba(255,0,100,.20),
             transparent 30%
         ),
         radial-gradient(
             circle at 90% 70%,
-            rgba(180,0,255,.15),
+            rgba(180,0,255,.16),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #18000d,
-            #350017,
-            #09000c
+            #17000d,
+            #390018,
+            #080009
         );
 }
 
-.background::after{
+.bg:after{
     content:"";
+
     position:absolute;
     inset:0;
 
-    background:
+    opacity:.25;
+
+    background-image:
         radial-gradient(
-            circle,
-            rgba(255,255,255,.06) 1px,
+            rgba(255,255,255,.7) 1px,
             transparent 1px
         );
 
-    background-size:35px 35px;
-    opacity:.35;
+    background-size:32px 32px;
 }
 
-/* =========================================================
-   YOUTUBE
-========================================================= */
-
-.youtube-background{
-    position:fixed;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    overflow:hidden;
-    opacity:.18;
-}
-
-.youtube-background iframe{
-    position:absolute;
-
-    width:100vw;
-    height:100vh;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%)
-        scale(1.3);
-
-    border:0;
-}
-
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
 
 .overlay{
     position:fixed;
     inset:0;
+
     z-index:1;
 
     background:
-        linear-gradient(
-            rgba(5,0,8,.25),
-            rgba(5,0,8,.82)
-        );
+        rgba(8,0,10,.30);
 
     pointer-events:none;
 }
+
 
 /* =========================================================
    MUSIC BUTTON
@@ -142,103 +112,116 @@ body{
 .music{
     position:fixed;
 
-    top:18px;
-    right:18px;
+    right:16px;
+    top:16px;
 
     z-index:9999;
 
-    padding:11px 18px;
+    border:
+        1px solid rgba(255,255,255,.45);
 
-    border:none;
-    border-radius:50px;
+    border-radius:999px;
+
+    padding:11px 17px;
 
     background:
         linear-gradient(
             135deg,
-            #ff3d82,
-            #b4004f
+            #ff4385,
+            #b90050
         );
 
-    color:white;
+    color:#fff;
 
-    font-size:14px;
     font-weight:bold;
 
     cursor:pointer;
 
     box-shadow:
-        0 0 15px rgba(255,50,120,.5),
-        0 0 35px rgba(255,50,120,.25);
+        0 0 18px rgba(255,40,120,.55);
 
     transition:.3s;
 }
 
 .music:hover{
-    transform:scale(1.08);
+    transform:scale(1.07);
 }
 
+
 /* =========================================================
-   MAIN
+   PAGE
 ========================================================= */
 
-.main{
+.page{
     position:relative;
+
     z-index:5;
 
     min-height:100vh;
 
     display:flex;
+
     justify-content:center;
     align-items:center;
 
-    padding:80px 20px 50px;
+    padding:
+        80px
+        14px
+        35px;
 }
 
+
 /* =========================================================
-   CARD
+   MAIN CARD
 ========================================================= */
 
 .card{
-    width:min(900px,100%);
+    width:min(920px,100%);
 
-    padding:45px 35px;
+    padding:
+        42px
+        32px;
 
-    border-radius:35px;
+    text-align:center;
+
+    border-radius:34px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(60,0,30,.72),
-            rgba(20,0,15,.78)
+            rgba(65,0,32,.74),
+            rgba(18,0,14,.82)
         );
 
     border:
-        1px solid rgba(255,160,200,.35);
+        1px solid rgba(255,170,205,.38);
 
     backdrop-filter:blur(18px);
+
     -webkit-backdrop-filter:blur(18px);
 
     box-shadow:
-        0 0 40px rgba(255,0,100,.25),
-        0 0 100px rgba(255,0,100,.12);
-
-    text-align:center;
+        0 0 40px rgba(255,0,105,.26),
+        0 0 100px rgba(255,0,105,.12);
 
     animation:
-        cardAppear 1.3s ease;
+        appear 1.2s ease;
 }
 
-@keyframes cardAppear{
+
+@keyframes appear{
 
     from{
         opacity:0;
+
         transform:
-            translateY(50px)
-            scale(.92);
+            translateY(45px)
+            scale(.94);
     }
 
     to{
         opacity:1;
+
         transform:
             translateY(0)
             scale(1);
@@ -246,210 +229,238 @@ body{
 
 }
 
+
 /* =========================================================
-   SMALL TOP TEXT
+   EYEBROW
 ========================================================= */
 
-.small-title{
-    font-size:17px;
+.eyebrow{
+
+    font-size:14px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
 
-    color:#ffb4d1;
+    color:#ffc1d8;
 
     margin-bottom:15px;
 
-    animation:
-        glowText 2s infinite alternate;
+    text-shadow:
+        0 0 15px #ff4d91;
 }
 
+
 /* =========================================================
-   HBD TITLE
+   TITLE
 ========================================================= */
 
 .title{
+
     font-family:cursive;
 
-    font-size:clamp(55px,9vw,90px);
+    font-size:
+        clamp(
+            52px,
+            9vw,
+            92px
+        );
 
-    line-height:1;
-
-    margin-bottom:12px;
+    line-height:.95;
 
     background:
         linear-gradient(
             90deg,
             #fff,
-            #ffb1cf,
+            #ffb3cf,
             #fff
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
+
     color:transparent;
 
     text-shadow:
-        0 0 15px rgba(255,70,130,.7),
-        0 0 40px rgba(255,0,100,.5);
+        0 0 18px rgba(255,70,130,.7);
 
     animation:
-        titleGlow 2s infinite alternate;
+        glow 2s infinite alternate;
 }
 
-@keyframes titleGlow{
 
-    from{
-        transform:scale(1);
-    }
+@keyframes glow{
 
     to{
-        transform:scale(1.04);
+
+        transform:scale(1.035);
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(255,40,120,.7)
+            );
     }
 
 }
 
-@keyframes glowText{
-
-    from{
-        text-shadow:
-            0 0 5px #ff4b91;
-    }
-
-    to{
-        text-shadow:
-            0 0 20px #ff4b91,
-            0 0 40px #ff4b91;
-    }
-
-}
 
 /* =========================================================
    NAME
 ========================================================= */
 
 .name{
+
     font-family:cursive;
 
-    font-size:clamp(45px,8vw,75px);
+    font-size:
+        clamp(
+            48px,
+            8vw,
+            78px
+        );
 
-    color:white;
-
-    margin-bottom:20px;
-
-    text-shadow:
-        0 0 10px #ff477e,
-        0 0 30px #ff174f,
-        0 0 60px #ff174f;
-}
-
-/* =========================================================
-   MESSAGE
-========================================================= */
-
-.message{
-    max-width:720px;
-
-    margin:0 auto 30px;
-
-    font-size:21px;
-
-    line-height:1.8;
-
-    color:#ffe9f1;
+    margin:
+        12px 0
+        8px;
 
     text-shadow:
-        0 2px 10px rgba(0,0,0,.7);
+        0 0 12px #ff477e,
+        0 0 35px #ff174f,
+        0 0 65px #ff174f;
 }
 
-.message strong{
-    color:#ffb3cf;
-}
 
 /* =========================================================
    CAKE
 ========================================================= */
 
 .cake{
-    font-size:75px;
 
-    margin:10px 0 25px;
+    font-size:74px;
+
+    margin:
+        12px 0
+        22px;
 
     animation:
-        cakeFloat 2s ease-in-out infinite;
+        float 2s ease-in-out infinite;
 }
 
-@keyframes cakeFloat{
 
-    0%,100%{
-        transform:translateY(0);
-    }
+@keyframes float{
 
     50%{
-        transform:translateY(-10px);
+        transform:
+            translateY(-10px);
     }
 
 }
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#ffeaf2;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.65);
+}
+
+
+.message strong{
+    color:#ffb7d1;
+}
+
+
+/* =========================================================
+   GALLERY TITLE
+========================================================= */
+
+.gallery-title{
+
+    font-size:29px;
+
+    margin:
+        34px 0
+        18px;
+
+    text-shadow:
+        0 0 18px #ff477e;
+}
+
 
 /* =========================================================
    GALLERY
 ========================================================= */
 
-.gallery-title{
-    font-size:28px;
-
-    margin:35px 0 20px;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 15px #ff477e;
-}
-
 .gallery{
+
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(2,1fr);
 
     gap:14px;
 
-    max-width:780px;
+    max-width:800px;
 
-    margin:0 auto;
+    margin:auto;
 }
 
-.photo{
-    position:relative;
 
-    height:230px;
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.photo{
+
+    height:330px;
+
+    position:relative;
 
     overflow:hidden;
 
-    border-radius:22px;
+    border-radius:24px;
 
     border:
-        2px solid rgba(255,150,190,.4);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.35);
+        2px solid rgba(255,165,200,.42);
 
     cursor:pointer;
 
-    transition:
-        transform .4s,
-        box-shadow .4s;
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.4);
+
+    transition:.4s;
 }
+
 
 .photo:hover{
+
     transform:
-        translateY(-8px)
-        scale(1.03);
+        translateY(-7px)
+        scale(1.02);
 
     box-shadow:
-        0 15px 40px rgba(255,0,100,.35);
+        0 18px 45px
+        rgba(255,0,100,.35);
 }
 
+
 .photo img{
+
     width:100%;
     height:100%;
 
@@ -457,46 +468,51 @@ body{
 
     display:block;
 
-    transition:
-        transform .6s;
+    transition:.6s;
 }
+
 
 .photo:hover img{
-    transform:scale(1.1);
+    transform:scale(1.06);
 }
 
-.photo::after{
+
+.photo:after{
+
     content:"❤️";
 
     position:absolute;
 
-    bottom:12px;
     right:12px;
+    bottom:10px;
 
-    font-size:24px;
-
-    opacity:.8;
+    font-size:25px;
 
     text-shadow:
-        0 0 10px #ff174f;
+        0 0 12px #ff174f;
 }
 
+
 /* =========================================================
-   BUTTON
+   SURPRISE BUTTON
 ========================================================= */
 
-.surprise-btn{
+.surprise{
 
-    margin-top:35px;
+    margin-top:32px;
 
-    padding:17px 35px;
+    padding:
+        17px
+        32px;
 
-    border:none;
-    border-radius:50px;
+    border:0;
 
-    color:white;
+    border-radius:999px;
 
-    font-size:19px;
+    color:#fff;
+
+    font-size:18px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -504,63 +520,84 @@ body{
     background:
         linear-gradient(
             135deg,
-            #ff397b,
-            #c5004c
+            #ff397d,
+            #c0004b
         );
 
     box-shadow:
-        0 0 20px rgba(255,0,100,.5),
-        0 0 50px rgba(255,0,100,.2);
+        0 0 22px
+        rgba(255,0,100,.5);
 
     transition:.3s;
 }
 
-.surprise-btn:hover{
+
+.surprise:hover{
+
     transform:scale(1.08);
 
     box-shadow:
-        0 0 30px rgba(255,0,100,.8),
-        0 0 70px rgba(255,0,100,.35);
+        0 0 38px
+        rgba(255,0,100,.75);
 }
+
 
 /* =========================================================
    FLOATING TEXT
 ========================================================= */
 
-.floating{
-    position:fixed;
+.floatText,
+.heart,
+.balloon,
+.sparkle,
+.firework{
 
-    z-index:4;
+    position:fixed;
 
     pointer-events:none;
 
-    padding:10px 17px;
+    z-index:4;
+}
+
+
+/* =========================================================
+   COMPLIMENTS
+========================================================= */
+
+.floatText{
+
+    padding:
+        10px
+        17px;
 
     border-radius:30px;
 
+    font-weight:bold;
+
+    font-size:16px;
+
     background:
-        rgba(255,40,100,.15);
+        rgba(255,30,95,.17);
 
     border:
-        1px solid rgba(255,160,200,.4);
+        1px solid
+        rgba(255,170,205,.42);
 
     backdrop-filter:blur(8px);
 
-    color:white;
-
-    font-size:16px;
-    font-weight:bold;
-
     animation:
-        floatingText 5s linear forwards;
+        rise 5s linear forwards;
 }
 
-@keyframes floatingText{
+
+@keyframes rise{
 
     0%{
+
         opacity:0;
+
         transform:
-            translateY(40px)
+            translateY(35px)
             scale(.7);
     }
 
@@ -569,14 +606,18 @@ body{
     }
 
     70%{
+
         opacity:1;
+
         transform:
             translateY(-80px)
             scale(1);
     }
 
     100%{
+
         opacity:0;
+
         transform:
             translateY(-180px)
             scale(1.1);
@@ -584,27 +625,26 @@ body{
 
 }
 
+
 /* =========================================================
    HEARTS
 ========================================================= */
 
 .heart{
-    position:fixed;
 
-    top:-50px;
-
-    z-index:3;
-
-    pointer-events:none;
+    top:-55px;
 
     animation:
-        heartFall linear forwards;
+        fall linear forwards;
 }
 
-@keyframes heartFall{
+
+@keyframes fall{
 
     0%{
+
         opacity:0;
+
         transform:
             translateY(-50px)
             rotate(0);
@@ -615,7 +655,9 @@ body{
     }
 
     100%{
+
         opacity:0;
+
         transform:
             translateY(110vh)
             rotate(360deg);
@@ -623,76 +665,67 @@ body{
 
 }
 
+
 /* =========================================================
    BALLOONS
 ========================================================= */
 
 .balloon{
-    position:fixed;
 
-    bottom:-120px;
-
-    z-index:2;
-
-    pointer-events:none;
+    bottom:-100px;
 
     font-size:55px;
 
     animation:
-        balloonFly linear forwards;
+        balloon linear forwards;
 }
 
-@keyframes balloonFly{
+
+@keyframes balloon{
 
     0%{
-        transform:
-            translateY(0)
-            rotate(-5deg);
 
         opacity:0;
+
+        transform:
+            translateY(0);
     }
 
     10%{
         opacity:1;
     }
 
-    50%{
-        transform:
-            translateY(-50vh)
-            rotate(5deg);
-    }
-
     100%{
-        transform:
-            translateY(-120vh)
-            rotate(-5deg);
 
         opacity:0;
+
+        transform:
+            translateY(-120vh)
+            rotate(8deg);
     }
 
 }
+
 
 /* =========================================================
    SPARKLES
 ========================================================= */
 
 .sparkle{
-    position:fixed;
-
-    z-index:3;
-
-    pointer-events:none;
 
     font-size:20px;
 
     animation:
-        sparkle 1.8s ease-out forwards;
+        spark 1.8s ease-out forwards;
 }
 
-@keyframes sparkle{
+
+@keyframes spark{
 
     0%{
+
         opacity:0;
+
         transform:
             scale(0)
             rotate(0);
@@ -703,7 +736,9 @@ body{
     }
 
     100%{
+
         opacity:0;
+
         transform:
             scale(2)
             rotate(180deg);
@@ -711,47 +746,57 @@ body{
 
 }
 
+
 /* =========================================================
-   FIREWORK
+   FIREWORKS
 ========================================================= */
 
 .firework{
-    position:fixed;
+
+    font-size:48px;
 
     z-index:50;
 
-    pointer-events:none;
-
-    font-size:45px;
-
     animation:
-        firework 1.5s ease-out forwards;
+        boom 1.5s ease-out forwards;
 }
 
-@keyframes firework{
+
+@keyframes boom{
 
     0%{
+
         opacity:1;
-        transform:scale(.2);
+
+        transform:
+            scale(.2);
     }
 
     50%{
+
         opacity:1;
-        transform:scale(2);
+
+        transform:
+            scale(2);
     }
 
     100%{
+
         opacity:0;
-        transform:scale(5);
+
+        transform:
+            scale(5);
     }
 
 }
+
 
 /* =========================================================
    PHOTO VIEWER
 ========================================================= */
 
-.photo-viewer{
+.viewer{
+
     position:fixed;
 
     inset:0;
@@ -766,22 +811,28 @@ body{
     padding:20px;
 
     background:
-        rgba(0,0,0,.88);
+        rgba(0,0,0,.9);
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:.4s;
+    transition:.35s;
 }
 
-.photo-viewer.show{
+
+.viewer.show{
+
     opacity:1;
+
     pointer-events:auto;
 }
 
-.photo-viewer img{
+
+.viewer img{
+
     max-width:95vw;
+
     max-height:88vh;
 
     object-fit:contain;
@@ -789,47 +840,36 @@ body{
     border-radius:20px;
 
     box-shadow:
-        0 0 40px rgba(255,0,100,.4);
-
-    animation:
-        photoOpen .4s ease;
+        0 0 45px
+        rgba(255,0,100,.45);
 }
 
-@keyframes photoOpen{
 
-    from{
-        transform:scale(.8);
-        opacity:0;
-    }
+.close{
 
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-
-}
-
-.close-photo{
     position:absolute;
 
-    top:20px;
-    right:25px;
+    right:22px;
+    top:15px;
 
-    border:none;
+    border:0;
+
     background:none;
 
-    color:white;
+    color:#fff;
 
-    font-size:40px;
+    font-size:44px;
 
     cursor:pointer;
 }
+
 
 /* =========================================================
    FINAL SCREEN
 ========================================================= */
 
-.final-screen{
+.final{
+
     position:fixed;
 
     inset:0;
@@ -841,103 +881,118 @@ body{
     flex-direction:column;
 
     align-items:center;
+
     justify-content:center;
 
-    padding:30px;
+    padding:
+        30px
+        16px;
 
     text-align:center;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(255,40,110,.6),
-            rgba(15,0,10,.98)
+            rgba(255,40,110,.62),
+            rgba(12,0,9,.98)
         );
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:
-        opacity 1s;
+    transition:1s;
 
     overflow-y:auto;
 }
 
-.final-screen.show{
+
+.final.show{
+
     opacity:1;
+
     pointer-events:auto;
 }
 
-.final-heart{
-    font-size:100px;
+
+.finalHeart{
+
+    font-size:95px;
 
     animation:
-        heartbeat 1s infinite;
+        beat 1s infinite;
 }
 
-@keyframes heartbeat{
 
-    0%,100%{
-        transform:scale(1);
-    }
+@keyframes beat{
 
     50%{
-        transform:scale(1.25);
+        transform:scale(1.24);
     }
 
 }
 
-.final-title{
+
+.finalTitle{
+
     font-family:cursive;
 
-    font-size:clamp(50px,9vw,85px);
-
-    margin:10px;
+    font-size:
+        clamp(
+            50px,
+            9vw,
+            88px
+        );
 
     text-shadow:
         0 0 20px #ff477e,
-        0 0 50px #ff174f;
+        0 0 55px #ff174f;
 }
 
-.final-subtitle{
-    font-size:22px;
 
-    color:#ffbdd3;
+.finalSub{
 
-    margin-bottom:20px;
+    font-size:23px;
+
+    color:#ffc0d6;
+
+    margin:
+        8px 0
+        20px;
 }
 
-.final-text{
-    max-width:750px;
 
-    font-size:22px;
+.finalText{
+
+    max-width:760px;
+
+    font-size:21px;
 
     line-height:1.8;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,.4);
 }
 
-.final-button{
-    margin-top:30px;
 
-    padding:14px 28px;
+.back{
 
-    border:none;
-    border-radius:50px;
+    margin-top:28px;
 
-    background:white;
+    padding:
+        13px
+        25px;
 
-    color:#c4004d;
+    border:0;
 
-    font-size:17px;
+    border-radius:999px;
+
+    background:#fff;
+
+    color:#c0004b;
+
     font-weight:bold;
 
     cursor:pointer;
 }
+
 
 /* =========================================================
    MOBILE
@@ -946,140 +1001,145 @@ body{
 @media(max-width:700px){
 
     .music{
+
         top:10px;
         right:10px;
 
-        padding:9px 13px;
+        padding:
+            9px
+            13px;
 
         font-size:12px;
     }
 
-    .main{
+
+    .page{
+
         padding:
-            65px
-            12px
-            30px;
+            64px
+            10px
+            25px;
     }
+
 
     .card{
+
         padding:
             30px
-            15px;
+            14px;
 
-        border-radius:28px;
+        border-radius:27px;
     }
 
-    .small-title{
-        font-size:12px;
+
+    .eyebrow{
+
+        font-size:11px;
+
         letter-spacing:3px;
     }
+
 
     .title{
         font-size:48px;
     }
 
+
     .name{
         font-size:43px;
     }
 
-    .message{
-        font-size:17px;
-        line-height:1.65;
-    }
 
     .cake{
         font-size:60px;
     }
 
+
+    .message{
+
+        font-size:17px;
+
+        line-height:1.65;
+    }
+
+
     .gallery-title{
+
         font-size:24px;
+
         margin-top:28px;
     }
 
+
     .gallery{
-        grid-template-columns:
-            repeat(2,1fr);
 
         gap:9px;
     }
 
+
     .photo{
-        height:170px;
-        border-radius:16px;
+
+        height:230px;
+
+        border-radius:17px;
     }
 
-    .photo::after{
-        font-size:18px;
-        bottom:7px;
-        right:7px;
-    }
 
-    .surprise-btn{
-        width:90%;
+    .surprise{
 
-        padding:15px 20px;
+        width:92%;
 
-        font-size:17px;
-    }
+        font-size:16px;
 
-    .final-screen{
         padding:
-            60px
             15px
-            25px;
+            18px;
     }
 
-    .final-heart{
+
+    .finalHeart{
         font-size:70px;
     }
 
-    .final-title{
-        font-size:47px;
-    }
 
-    .final-subtitle{
+    .finalSub{
         font-size:18px;
     }
 
-    .final-text{
+
+    .finalText{
+
         font-size:17px;
+
         line-height:1.6;
     }
 
 }
 
-@media(max-width:380px){
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:390px){
 
     .title{
         font-size:42px;
     }
 
+
     .name{
-        font-size:37px;
+        font-size:38px;
     }
+
 
     .message{
         font-size:15px;
     }
 
+
     .photo{
-        height:145px;
-    }
-
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        transition:none !important;
+        height:190px;
     }
 
 }
@@ -1096,20 +1156,7 @@ body{
      BACKGROUND
 ===================================================== -->
 
-<div class="background"></div>
-
-<div class="youtube-background">
-
-    <iframe
-        id="youtubePlayer"
-        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
-        title="Birthday Music"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-
-</div>
+<div class="bg"></div>
 
 <div class="overlay"></div>
 
@@ -1118,12 +1165,37 @@ body{
      MUSIC
 ===================================================== -->
 
+<div
+    class="youtube-background"
+    style="display:none"
+>
+
+    <iframe
+        id="youtubePlayer"
+
+        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
+
+        allow="autoplay; encrypted-media"
+
+        style="
+            position:fixed;
+            width:1px;
+            height:1px;
+            opacity:0;
+            pointer-events:none;
+        "
+    ></iframe>
+
+</div>
+
+
 <button
     class="music"
     id="musicButton"
-    onclick="startMusic()">
+    onclick="startMusic()"
+>
 
-    🎵 ჩართე მუსიკა
+    🎵 ჩართე მუსიკა ❤️
 
 </button>
 
@@ -1132,80 +1204,126 @@ body{
      MAIN
 ===================================================== -->
 
-<main class="main">
+<main class="page">
 
-    <section class="card">
-
-        <div class="small-title">
-            ✨ A Special Day ✨
-        </div>
+<section class="card">
 
 
-        <div class="title">
-            Happy Birthday
-        </div>
+    <div class="eyebrow">
+
+        ✨ A Special Day ✨
+
+    </div>
 
 
-        <div class="name">
-            Sophya ❤️
-        </div>
+    <div class="title">
+
+        Happy Birthday
+
+    </div>
 
 
-        <div class="cake">
-            🎂
-        </div>
+    <div class="name">
+
+        Sopo ❤️
+
+    </div>
 
 
-        <div class="message">
+    <div class="cake">
 
-            დღეს უბრალოდ ჩვეულებრივი დღე არ არის... ❤️
+        🎂
 
-            <br><br>
-
-            დღეს იმ ადამიანის დაბადების დღეა,
-            ვინც თავისი ღიმილით,
-            თვალებით და უბრალოდ არსებობით
-            სამყაროს უფრო ლამაზს ხდის. ✨
-
-            <br><br>
-
-            <strong>
-                გილოცავ დაბადების დღეს, Sophya! 🎂❤️
-            </strong>
-
-            <br>
-
-            მინდა ყოველთვის ბედნიერი,
-            გაღიმებული და ისეთი ლამაზი იყო,
-            როგორიც დღეს ხარ. 🌹
-
-        </div>
+    </div>
 
 
-        <!-- =================================================
-             GALLERY
-        ================================================= -->
+    <div class="message">
 
-        <div class="gallery-title">
-            📸 ჩვენი ლამაზი მომენტები ❤️
+        დღეს უბრალოდ ჩვეულებრივი დღე არ არის... ❤️
+
+        <br><br>
+
+        დღეს იმ ადამიანის დაბადების დღეა,
+        რომლის ღიმილიც ერთ ჩვეულებრივ დღესაც კი
+        განსაკუთრებულს ხდის. ✨
+
+        <br><br>
+
+        <strong>
+            გილოცავ დაბადების დღეს, სოპო! 🎂❤️
+        </strong>
+
+        <br>
+
+        მინდა, რომ ყოველთვის ასეთი ლამაზი,
+        ბედნიერი და გაღიმებული იყო. 🌹
+
+        <br><br>
+
+        ყველა შენი სურვილი აგსრულებოდეს
+        და წინ მხოლოდ ლამაზი დღეები გქონდეს. 💖
+
+    </div>
+
+
+    <!-- =================================================
+         GALLERY
+    ================================================= -->
+
+    <div class="gallery-title">
+
+        📸 ლამაზი მოგონებები ❤️
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div
+            class="photo"
+            onclick="openPhoto('SOPHY1.jpg')"
+        >
+
+            <img
+                src="SOPHY1.jpg"
+                alt="Sopo"
+            >
+
         </div>
 
 
         <div
-            class="gallery"
-            id="gallery">
+            class="photo"
+            onclick="openPhoto('SOPHY2.jpg')"
+        >
+
+            <img
+                src="SOPHY2.jpg"
+                alt="Sopo"
+            >
+
         </div>
 
 
-        <button
-            class="surprise-btn"
-            onclick="showSurprise()">
+    </div>
 
-            🎁 გახსენი შენი სიურპრიზი ❤️
 
-        </button>
+    <!-- =================================================
+         SURPRISE
+    ================================================= -->
 
-    </section>
+    <button
+        class="surprise"
+        onclick="showSurprise()"
+    >
+
+        🎁 გახსენი შენი სიურპრიზი ❤️
+
+    </button>
+
+
+</section>
 
 </main>
 
@@ -1215,325 +1333,108 @@ body{
 ===================================================== -->
 
 <div
-    class="photo-viewer"
-    id="photoViewer"
-    onclick="closePhoto(event)">
+    class="viewer"
+    id="viewer"
+    onclick="closeViewer(event)"
+>
+
 
     <button
-        class="close-photo"
-        onclick="closePhoto()">
+        class="close"
+        onclick="closeViewer()"
+    >
 
         ×
 
     </button>
 
+
     <img
-        id="viewerImage"
+        id="viewerImg"
         src=""
-        alt="Photo">
+        alt="Sopo photo"
+    >
+
 
 </div>
 
 
 <!-- =====================================================
-     FINAL SCREEN
+     FINAL SURPRISE
 ===================================================== -->
 
 <div
-    class="final-screen"
-    id="finalScreen">
+    class="final"
+    id="final"
+>
 
-    <div class="final-heart">
+
+    <div class="finalHeart">
+
         ❤️
+
     </div>
 
 
-    <div class="final-title">
+    <div class="finalTitle">
+
         Happy Birthday
+
     </div>
 
 
-    <div class="final-subtitle">
-        Sophya 🌹
+    <div class="finalSub">
+
+        Sopo 🌹
+
     </div>
 
 
-    <div class="final-text">
+    <div class="finalText">
 
-        მინდა, რომ ეს წელი შენთვის
-        ყველაზე ლამაზი და ბედნიერი იყოს. 🥹❤️
+        მინდა, ეს ახალი წელი შენს ცხოვრებაში
+        ყველაზე ლამაზი იყოს. 🥹❤️
 
         <br><br>
 
         ყველა სურვილი აგსრულებოდეს,
         ყველა დღე ღიმილით დაგეწყოს
         და ცხოვრებაში ყოველთვის
-        გყავდეს ადამიანები,
-        რომლებიც შენს ღიმილს დააფასებენ. ✨
+        გქონდეს მიზეზი ბედნიერებისთვის. ✨
 
         <br><br>
 
-        შენ ნამდვილად განსაკუთრებული ადამიანი ხარ. ❤️
+        შენ ნამდვილად განსაკუთრებული ადამიანი ხარ
+        და იმსახურებ მხოლოდ ყველაზე ლამაზ
+        და ბედნიერ მომენტებს. 🌹
 
         <br><br>
 
         <strong>
-            გილოცავ დაბადების დღეს! 🎂🎉
-        </strong>
-
-        <br><br>
-
-        და გახსოვდეს...
-
-        <br>
-
-        <strong>
-            შენ იმსახურებ მხოლოდ ყველაზე ლამაზ
-            და ბედნიერ მომენტებს. 🌹❤️
+            გილოცავ დაბადების დღეს! 🎂🎉❤️
         </strong>
 
     </div>
 
 
     <button
-        class="final-button"
-        onclick="closeSurprise()">
+        class="back"
+        onclick="closeSurprise()"
+    >
 
-        ❤️ კიდევ ერთხელ ნახე
+        ❤️ უკან
 
     </button>
+
 
 </div>
 
 
 <script>
 
-/* =========================================================
-   PHOTOS
-========================================================= */
-
-/*
-    აქ ჩაწერე შენი ფოტოები.
-
-    მაგალითად:
-
-    photo1.jpg
-    photo2.jpg
-    photo3.jpg
-    photo4.jpg
-
-    ფოტოები უნდა იყოს იმავე საქაღალდეში,
-    სადაც index.html არის.
-*/
-
-const photos = [
-
-    "photo1.jpg",
-    "photo2.jpg",
-    "photo3.jpg",
-    "photo4.jpg",
-    "photo5.jpg",
-    "photo6.jpg"
-
-];
-
 
 /* =========================================================
-   CREATE GALLERY
-========================================================= */
-
-const gallery =
-    document.getElementById("gallery");
-
-
-photos.forEach((photo,index)=>{
-
-    const wrapper =
-        document.createElement("div");
-
-    wrapper.className =
-        "photo";
-
-
-    const image =
-        document.createElement("img");
-
-    image.src = photo;
-
-    image.alt =
-        "Sophya photo " + (index + 1);
-
-
-    image.onerror = function(){
-
-        wrapper.style.display = "none";
-
-    };
-
-
-    wrapper.appendChild(image);
-
-
-    wrapper.onclick = function(){
-
-        openPhoto(photo);
-
-    };
-
-
-    gallery.appendChild(wrapper);
-
-});
-
-
-/* =========================================================
-   PHOTO VIEWER
-========================================================= */
-
-function openPhoto(src){
-
-    const viewer =
-        document.getElementById("photoViewer");
-
-    const image =
-        document.getElementById("viewerImage");
-
-
-    image.src = src;
-
-    viewer.classList.add("show");
-
-}
-
-
-function closePhoto(event){
-
-    if(
-        event &&
-        event.target &&
-        event.target.id === "viewerImage"
-    ){
-        return;
-    }
-
-
-    document
-        .getElementById("photoViewer")
-        .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   MUSIC
-========================================================= */
-
-function startMusic(){
-
-    const iframe =
-        document.getElementById("youtubePlayer");
-
-
-    iframe.src =
-        "https://www.youtube.com/embed/c5wJSDMhmrQ" +
-        "?autoplay=1" +
-        "&mute=0" +
-        "&loop=1" +
-        "&playlist=c5wJSDMhmrQ" +
-        "&controls=0" +
-        "&rel=0" +
-        "&playsinline=1";
-
-
-    document
-        .getElementById("musicButton")
-        .innerHTML =
-        "🎵 მუსიკა ჩართულია ❤️";
-
-}
-
-
-/* =========================================================
-   SURPRISE
-========================================================= */
-
-function showSurprise(){
-
-    const screen =
-        document.getElementById("finalScreen");
-
-
-    screen.classList.add("show");
-
-
-    /* Fireworks */
-
-    for(let i=0;i<80;i++){
-
-        setTimeout(()=>{
-
-            createFirework();
-
-        },i*45);
-
-    }
-
-
-    /* Hearts */
-
-    for(let i=0;i<100;i++){
-
-        setTimeout(()=>{
-
-            createHeart();
-
-        },i*30);
-
-    }
-
-
-    /* Balloons */
-
-    for(let i=0;i<30;i++){
-
-        setTimeout(()=>{
-
-            createBalloon();
-
-        },i*120);
-
-    }
-
-
-    /* Sparkles */
-
-    for(let i=0;i<100;i++){
-
-        setTimeout(()=>{
-
-            createSparkle();
-
-        },i*50);
-
-    }
-
-
-    startMusic();
-
-}
-
-
-function closeSurprise(){
-
-    document
-        .getElementById("finalScreen")
-        .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   FLOATING COMPLIMENTS
+   COMPLIMENTS
 ========================================================= */
 
 const compliments = [
@@ -1548,7 +1449,7 @@ const compliments = [
 
     "შენი სილამაზე სიტყვებს სცდება 🌹",
 
-    "შენი ღიმილი დღეს განსაკუთრებით ლამაზია 🥰",
+    "დღეს განსაკუთრებით ლამაზი ხარ 🥰",
 
     "იყავი ყოველთვის ასეთი ბედნიერი ❤️",
 
@@ -1571,17 +1472,182 @@ const compliments = [
 ];
 
 
-function createFloatingText(){
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
 
-    const element =
+function openPhoto(src){
+
+    document
+        .getElementById("viewerImg")
+        .src = src;
+
+
+    document
+        .getElementById("viewer")
+        .classList.add("show");
+
+}
+
+
+function closeViewer(event){
+
+    if(
+        event &&
+        event.target &&
+        event.target.id === "viewerImg"
+    ){
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("viewer")
+        .classList.remove("show");
+
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+function startMusic(){
+
+    const iframe =
+        document.getElementById(
+            "youtubePlayer"
+        );
+
+
+    document
+        .querySelector(
+            ".youtube-background"
+        )
+        .style.display = "block";
+
+
+    iframe.src =
+        "https://www.youtube.com/embed/c5wJSDMhmrQ" +
+        "?autoplay=1" +
+        "&mute=0" +
+        "&loop=1" +
+        "&playlist=c5wJSDMhmrQ" +
+        "&controls=0" +
+        "&rel=0" +
+        "&playsinline=1";
+
+
+    document
+        .getElementById(
+            "musicButton"
+        )
+        .innerHTML =
+        "🎵 მუსიკა ჩართულია ❤️";
+
+}
+
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+function showSurprise(){
+
+    document
+        .getElementById("final")
+        .classList
+        .add("show");
+
+
+    startMusic();
+
+
+    for(
+        let i = 0;
+        i < 90;
+        i++
+    ){
+
+        setTimeout(
+            createFirework,
+            i * 45
+        );
+
+    }
+
+
+    for(
+        let i = 0;
+        i < 110;
+        i++
+    ){
+
+        setTimeout(
+            createHeart,
+            i * 30
+        );
+
+    }
+
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ){
+
+        setTimeout(
+            createBalloon,
+            i * 110
+        );
+
+    }
+
+
+    for(
+        let i = 0;
+        i < 100;
+        i++
+    ){
+
+        setTimeout(
+            createSparkle,
+            i * 45
+        );
+
+    }
+
+}
+
+
+function closeSurprise(){
+
+    document
+        .getElementById("final")
+        .classList
+        .remove("show");
+
+}
+
+
+/* =========================================================
+   FLOATING COMPLIMENTS
+========================================================= */
+
+function createFloating(){
+
+    const el =
         document.createElement("div");
 
 
-    element.className =
-        "floating";
+    el.className =
+        "floatText";
 
 
-    element.innerHTML =
+    el.innerHTML =
         compliments[
             Math.floor(
                 Math.random() *
@@ -1590,33 +1656,40 @@ function createFloatingText(){
         ];
 
 
-    element.style.left =
-        Math.random() * 80 + 10 + "vw";
+    el.style.left =
+        (
+            Math.random() * 78 + 10
+        ) + "vw";
 
 
-    element.style.top =
-        Math.random() * 70 + 10 + "vh";
+    el.style.top =
+        (
+            Math.random() * 68 + 10
+        ) + "vh";
 
 
-    element.style.animationDuration =
-        (3 + Math.random() * 3) + "s";
+    el.style.animationDuration =
+        (
+            3 + Math.random() * 3
+        ) + "s";
 
 
-    document.body.appendChild(element);
+    document
+        .body
+        .appendChild(el);
 
 
-    setTimeout(()=>{
-
-        element.remove();
-
-    },6000);
+    setTimeout(
+        () => el.remove(),
+        6500
+    );
 
 }
 
 
 setInterval(
-    createFloatingText,
-    1000
+    createFloating,
+    1100
 );
 
 
@@ -1626,57 +1699,63 @@ setInterval(
 
 function createHeart(){
 
-    const heart =
+    const el =
         document.createElement("div");
 
 
-    heart.className =
+    el.className =
         "heart";
 
 
-    heart.innerHTML = [
-
-        "❤️",
-        "💕",
-        "💖",
-        "💗",
-        "💘",
-        "💝"
-
-    ][
-        Math.floor(
-            Math.random()*6
-        )
-    ];
-
-
-    heart.style.left =
-        Math.random()*100 + "vw";
+    el.innerHTML =
+        [
+            "❤️",
+            "💕",
+            "💖",
+            "💗",
+            "💘",
+            "💝"
+        ][
+            Math.floor(
+                Math.random() * 6
+            )
+        ];
 
 
-    heart.style.fontSize =
-        (18 + Math.random()*35) + "px";
+    el.style.left =
+        Math.random() * 100 + "vw";
 
 
-    heart.style.animationDuration =
-        (4 + Math.random()*5) + "s";
+    el.style.fontSize =
+        (
+            18 +
+            Math.random() * 35
+        ) + "px";
 
 
-    document.body.appendChild(heart);
+    el.style.animationDuration =
+        (
+            4 +
+            Math.random() * 5
+        ) + "s";
 
 
-    setTimeout(()=>{
+    document
+        .body
+        .appendChild(el);
 
-        heart.remove();
 
-    },10000);
+    setTimeout(
+        () => el.remove(),
+        10000
+    );
 
 }
 
 
 setInterval(
     createHeart,
-    500
+    650
 );
 
 
@@ -1686,56 +1765,62 @@ setInterval(
 
 function createBalloon(){
 
-    const balloon =
+    const el =
         document.createElement("div");
 
 
-    balloon.className =
+    el.className =
         "balloon";
 
 
-    balloon.innerHTML = [
-
-        "🎈",
-        "🎈",
-        "🎈",
-        "🎀",
-        "💗"
-
-    ][
-        Math.floor(
-            Math.random()*5
-        )
-    ];
-
-
-    balloon.style.left =
-        Math.random()*95 + "vw";
+    el.innerHTML =
+        [
+            "🎈",
+            "🎈",
+            "🎈",
+            "🎀",
+            "💗"
+        ][
+            Math.floor(
+                Math.random() * 5
+            )
+        ];
 
 
-    balloon.style.fontSize =
-        (40 + Math.random()*35) + "px";
+    el.style.left =
+        Math.random() * 95 + "vw";
 
 
-    balloon.style.animationDuration =
-        (6 + Math.random()*6) + "s";
+    el.style.fontSize =
+        (
+            40 +
+            Math.random() * 35
+        ) + "px";
 
 
-    document.body.appendChild(balloon);
+    el.style.animationDuration =
+        (
+            6 +
+            Math.random() * 6
+        ) + "s";
 
 
-    setTimeout(()=>{
+    document
+        .body
+        .appendChild(el);
 
-        balloon.remove();
 
-    },13000);
+    setTimeout(
+        () => el.remove(),
+        13000
+    );
 
 }
 
 
 setInterval(
     createBalloon,
-    2500
+    3000
 );
 
 
@@ -1745,52 +1830,52 @@ setInterval(
 
 function createSparkle(){
 
-    const sparkle =
+    const el =
         document.createElement("div");
 
 
-    sparkle.className =
+    el.className =
         "sparkle";
 
 
-    sparkle.innerHTML = [
-
-        "✨",
-        "⭐",
-        "💫",
-        "✦",
-        "✧"
-
-    ][
-        Math.floor(
-            Math.random()*5
-        )
-    ];
-
-
-    sparkle.style.left =
-        Math.random()*100 + "vw";
+    el.innerHTML =
+        [
+            "✨",
+            "⭐",
+            "💫",
+            "✦",
+            "✧"
+        ][
+            Math.floor(
+                Math.random() * 5
+            )
+        ];
 
 
-    sparkle.style.top =
-        Math.random()*100 + "vh";
+    el.style.left =
+        Math.random() * 100 + "vw";
 
 
-    document.body.appendChild(sparkle);
+    el.style.top =
+        Math.random() * 100 + "vh";
 
 
-    setTimeout(()=>{
+    document
+        .body
+        .appendChild(el);
 
-        sparkle.remove();
 
-    },2000);
+    setTimeout(
+        () => el.remove(),
+        2000
+    );
 
 }
 
 
 setInterval(
     createSparkle,
-    600
+    650
 );
 
 
@@ -1800,74 +1885,81 @@ setInterval(
 
 function createFirework(){
 
-    const firework =
+    const el =
         document.createElement("div");
 
 
-    firework.className =
+    el.className =
         "firework";
 
 
-    firework.innerHTML = [
-
-        "🎆",
-        "✨",
-        "💥",
-        "❤️",
-        "💖",
-        "💕"
-
-    ][
-        Math.floor(
-            Math.random()*6
-        )
-    ];
-
-
-    firework.style.left =
-        Math.random()*90 + "vw";
+    el.innerHTML =
+        [
+            "🎆",
+            "✨",
+            "💥",
+            "❤️",
+            "💖",
+            "💕"
+        ][
+            Math.floor(
+                Math.random() * 6
+            )
+        ];
 
 
-    firework.style.top =
-        Math.random()*75 + "vh";
+    el.style.left =
+        Math.random() * 90 + "vw";
 
 
-    document.body.appendChild(firework);
+    el.style.top =
+        Math.random() * 75 + "vh";
 
 
-    setTimeout(()=>{
+    document
+        .body
+        .appendChild(el);
 
-        firework.remove();
 
-    },1600);
+    setTimeout(
+        () => el.remove(),
+        1600
+    );
 
 }
 
 
 /* =========================================================
-   INITIAL EFFECTS
+   START EFFECTS
 ========================================================= */
 
-for(let i=0;i<15;i++){
+for(
+    let i = 0;
+    i < 12;
+    i++
+){
 
-    setTimeout(()=>{
+    setTimeout(
+        createHeart,
+        i * 220
+    );
 
-        createHeart();
+}
 
-    },i*250);
+
+for(
+    let i = 0;
+    i < 8;
+    i++
+){
+
+    setTimeout(
+        createBalloon,
+        i * 400
+    );
 
 }
 
-
-for(let i=0;i<10;i++){
-
-    setTimeout(()=>{
-
-        createBalloon();
-
-    },i*400);
-
-}
 
 </script>
 
