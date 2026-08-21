@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ka">
 
@@ -10,62 +11,97 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>Sophya ❤️</title>
+<title>Happy Birthday Sophya ❤️</title>
 
 <style>
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html,
 body{
     width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
-    overflow:hidden;
+    min-height:100%;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    background:#08000b;
+    color:white;
 }
 
 body{
-
     min-height:100vh;
+}
 
-    font-family:Arial,sans-serif;
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-    color:white;
-
-    text-align:center;
+.background{
+    position:fixed;
+    inset:0;
+    z-index:0;
 
     background:
         radial-gradient(
             circle at 50% 20%,
-            #ff477e 0%,
-            #6d1238 45%,
-            #15000a 100%
+            rgba(255,75,135,.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(255,0,100,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(180,0,255,.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #18000d,
+            #350017,
+            #09000c
         );
 }
 
-
-/* =========================
-   YOUTUBE MUSIC
-========================= */
-
-.youtube-background{
-
-    position:fixed;
-
+.background::after{
+    content:"";
+    position:absolute;
     inset:0;
 
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:35px 35px;
+    opacity:.35;
+}
+
+/* =========================================================
+   YOUTUBE
+========================================================= */
+
+.youtube-background{
+    position:fixed;
+    inset:0;
     z-index:0;
-
     pointer-events:none;
-
     overflow:hidden;
+    opacity:.18;
 }
 
 .youtube-background iframe{
-
     position:absolute;
 
     width:100vw;
@@ -76,368 +112,486 @@ body{
 
     transform:
         translate(-50%,-50%)
-        scale(1.25);
+        scale(1.3);
 
     border:0;
+}
 
-    opacity:.18;
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    z-index:1;
+
+    background:
+        linear-gradient(
+            rgba(5,0,8,.25),
+            rgba(5,0,8,.82)
+        );
 
     pointer-events:none;
 }
 
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
 
-/* =========================
-   DARK OVERLAY
-========================= */
-
-.overlay{
-
+.music{
     position:fixed;
 
-    inset:0;
+    top:18px;
+    right:18px;
+
+    z-index:9999;
+
+    padding:11px 18px;
+
+    border:none;
+    border-radius:50px;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(255,40,100,.12),
-            rgba(0,0,0,.75)
+        linear-gradient(
+            135deg,
+            #ff3d82,
+            #b4004f
         );
-
-    z-index:1;
-}
-
-
-/* =========================
-   MAIN CARD
-========================= */
-
-.container{
-
-    position:relative;
-
-    width:min(92%,700px);
-
-    padding:45px 35px;
-
-    border-radius:30px;
-
-    background:
-        rgba(35,0,18,.65);
-
-    backdrop-filter:blur(15px);
-
-    -webkit-backdrop-filter:blur(15px);
-
-    border:
-        1px solid rgba(255,150,190,.45);
-
-    box-shadow:
-        0 0 30px rgba(255,0,90,.4),
-        0 0 100px rgba(255,0,90,.2);
-
-    z-index:5;
-
-    margin:auto;
-
-    animation:appear 1.5s ease;
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
-}
-
-
-@keyframes appear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            scale(.8)
-            translateY(30px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-}
-
-
-/* =========================
-   TITLE
-========================= */
-
-#title{
-
-    font-family:cursive;
-
-    font-size:65px;
-
-    margin:0 0 15px;
 
     color:white;
 
-    text-shadow:
-        0 0 10px #ff477e,
-        0 0 25px #ff477e,
-        0 0 50px #ff174f;
+    font-size:14px;
+    font-weight:bold;
 
-    animation:titleGlow 2s infinite alternate;
+    cursor:pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,50,120,.5),
+        0 0 35px rgba(255,50,120,.25);
+
+    transition:.3s;
 }
 
+.music:hover{
+    transform:scale(1.08);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+    position:relative;
+    z-index:5;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px 50px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card{
+    width:min(900px,100%);
+
+    padding:45px 35px;
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(60,0,30,.72),
+            rgba(20,0,15,.78)
+        );
+
+    border:
+        1px solid rgba(255,160,200,.35);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 0 40px rgba(255,0,100,.25),
+        0 0 100px rgba(255,0,100,.12);
+
+    text-align:center;
+
+    animation:
+        cardAppear 1.3s ease;
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(50px)
+            scale(.92);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =========================================================
+   SMALL TOP TEXT
+========================================================= */
+
+.small-title{
+    font-size:17px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+
+    color:#ffb4d1;
+
+    margin-bottom:15px;
+
+    animation:
+        glowText 2s infinite alternate;
+}
+
+/* =========================================================
+   HBD TITLE
+========================================================= */
+
+.title{
+    font-family:cursive;
+
+    font-size:clamp(55px,9vw,90px);
+
+    line-height:1;
+
+    margin-bottom:12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffb1cf,
+            #fff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    text-shadow:
+        0 0 15px rgba(255,70,130,.7),
+        0 0 40px rgba(255,0,100,.5);
+
+    animation:
+        titleGlow 2s infinite alternate;
+}
 
 @keyframes titleGlow{
 
     from{
-
-        text-shadow:
-            0 0 10px #ff477e,
-            0 0 20px #ff477e;
+        transform:scale(1);
     }
 
     to{
-
-        text-shadow:
-            0 0 20px #fff,
-            0 0 40px #ff477e,
-            0 0 70px #ff174f;
+        transform:scale(1.04);
     }
+
 }
 
+@keyframes glowText{
 
-/* =========================
-   LOVE TEXT
-========================= */
+    from{
+        text-shadow:
+            0 0 5px #ff4b91;
+    }
 
-.love-text{
+    to{
+        text-shadow:
+            0 0 20px #ff4b91,
+            0 0 40px #ff4b91;
+    }
 
-    font-size:22px;
+}
 
-    line-height:1.7;
+/* =========================================================
+   NAME
+========================================================= */
 
-    margin:20px 0;
+.name{
+    font-family:cursive;
+
+    font-size:clamp(45px,8vw,75px);
+
+    color:white;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 30px #ff174f,
+        0 0 60px #ff174f;
+}
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message{
+    max-width:720px;
+
+    margin:0 auto 30px;
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    color:#ffe9f1;
 
     text-shadow:
         0 2px 10px rgba(0,0,0,.7);
 }
 
+.message strong{
+    color:#ffb3cf;
+}
 
-/* =========================
-   QUESTION
-========================= */
+/* =========================================================
+   CAKE
+========================================================= */
 
-.question{
+.cake{
+    font-size:75px;
 
-    font-size:30px;
+    margin:10px 0 25px;
 
-    font-weight:bold;
+    animation:
+        cakeFloat 2s ease-in-out infinite;
+}
 
-    margin:25px 0;
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-title{
+    font-size:28px;
+
+    margin:35px 0 20px;
+
+    color:#fff;
 
     text-shadow:
-        0 0 10px #ff477e,
-        0 0 25px #ff477e;
+        0 0 15px #ff477e;
 }
 
+.gallery{
+    display:grid;
 
-.container h2{
+    grid-template-columns:
+        repeat(3,1fr);
 
-    font-size:25px;
+    gap:14px;
 
-    margin:15px 0;
+    max-width:780px;
+
+    margin:0 auto;
 }
 
+.photo{
+    position:relative;
 
-/* =========================
-   BUTTONS
-========================= */
+    height:230px;
 
-button{
+    overflow:hidden;
 
-    padding:15px 40px;
+    border-radius:22px;
 
-    font-size:20px;
+    border:
+        2px solid rgba(255,150,190,.4);
 
-    font-weight:bold;
-
-    border:none;
-
-    border-radius:50px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
 
     cursor:pointer;
 
-    margin:10px;
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+.photo:hover{
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255,0,100,.35);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .6s;
+}
+
+.photo:hover img{
+    transform:scale(1.1);
+}
+
+.photo::after{
+    content:"❤️";
+
+    position:absolute;
+
+    bottom:12px;
+    right:12px;
+
+    font-size:24px;
+
+    opacity:.8;
+
+    text-shadow:
+        0 0 10px #ff174f;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.surprise-btn{
+
+    margin-top:35px;
+
+    padding:17px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    color:white;
+
+    font-size:19px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff397b,
+            #c5004c
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,0,100,.5),
+        0 0 50px rgba(255,0,100,.2);
 
     transition:.3s;
 }
 
-
-/* YES */
-
-#yes{
-
-    background:
-        linear-gradient(
-            135deg,
-            #27d96f,
-            #078d3e
-        );
-
-    color:white;
+.surprise-btn:hover{
+    transform:scale(1.08);
 
     box-shadow:
-        0 0 15px rgba(0,255,100,.6),
-        0 0 35px rgba(0,255,100,.3);
+        0 0 30px rgba(255,0,100,.8),
+        0 0 70px rgba(255,0,100,.35);
 }
 
+/* =========================================================
+   FLOATING TEXT
+========================================================= */
 
-#yes:hover{
-
-    transform:scale(1.15);
-
-    box-shadow:
-        0 0 30px rgba(0,255,100,.9),
-        0 0 70px rgba(0,255,100,.5);
-}
-
-
-/* NO */
-
-#no{
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff315c,
-            #bd0038
-        );
-
-    color:white;
-
-    position:relative;
-
-    box-shadow:
-        0 0 20px rgba(255,0,80,.5);
-}
-
-
-/* =========================
-   RESULT
-========================= */
-
-#result{
-
-    font-size:24px;
-
-    line-height:1.7;
-
-    min-height:40px;
-
-    margin-top:25px;
-
-    text-shadow:
-        0 0 10px #ff477e,
-        0 0 25px #ff477e;
-}
-
-
-/* =========================
-   FLOATING COMPLIMENTS
-========================= */
-
-.compliment{
-
+.floating{
     position:fixed;
 
     z-index:4;
 
     pointer-events:none;
 
-    padding:12px 20px;
+    padding:10px 17px;
 
     border-radius:30px;
 
     background:
-        rgba(255,30,90,.18);
+        rgba(255,40,100,.15);
+
+    border:
+        1px solid rgba(255,160,200,.4);
 
     backdrop-filter:blur(8px);
 
-    -webkit-backdrop-filter:blur(8px);
-
-    border:
-        1px solid rgba(255,150,190,.5);
-
     color:white;
 
-    font-size:17px;
-
+    font-size:16px;
     font-weight:bold;
 
-    white-space:nowrap;
-
-    box-shadow:
-        0 0 15px rgba(255,40,100,.35);
-
     animation:
-        complimentMove linear forwards;
+        floatingText 5s linear forwards;
 }
 
-
-@keyframes complimentMove{
+@keyframes floatingText{
 
     0%{
-
         opacity:0;
-
         transform:
             translateY(40px)
-            scale(.7)
-            rotate(-5deg);
+            scale(.7);
     }
 
-    10%{
+    15%{
         opacity:1;
     }
 
-    50%{
-
+    70%{
         opacity:1;
-
         transform:
-            translateY(-30px)
-            scale(1)
-            rotate(3deg);
-    }
-
-    90%{
-        opacity:1;
+            translateY(-80px)
+            scale(1);
     }
 
     100%{
-
         opacity:0;
-
         transform:
             translateY(-180px)
-            scale(1.15)
-            rotate(-3deg);
+            scale(1.1);
     }
+
 }
 
-
-/* =========================
+/* =========================================================
    HEARTS
-========================= */
+========================================================= */
 
 .heart{
-
     position:fixed;
+
+    top:-50px;
 
     z-index:3;
 
@@ -447,14 +601,53 @@ button{
         heartFall linear forwards;
 }
 
-
 @keyframes heartFall{
 
     0%{
-
+        opacity:0;
         transform:
-            translateY(-100px)
-            rotate(0deg);
+            translateY(-50px)
+            rotate(0);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+.balloon{
+    position:fixed;
+
+    bottom:-120px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    font-size:55px;
+
+    animation:
+        balloonFly linear forwards;
+}
+
+@keyframes balloonFly{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(-5deg);
 
         opacity:0;
     }
@@ -463,47 +656,46 @@ button{
         opacity:1;
     }
 
-    100%{
-
+    50%{
         transform:
-            translateY(110vh)
-            rotate(360deg);
+            translateY(-50vh)
+            rotate(5deg);
+    }
+
+    100%{
+        transform:
+            translateY(-120vh)
+            rotate(-5deg);
 
         opacity:0;
     }
+
 }
 
-
-/* =========================
+/* =========================================================
    SPARKLES
-========================= */
+========================================================= */
 
 .sparkle{
-
     position:fixed;
 
     z-index:3;
 
     pointer-events:none;
 
-    color:#fff;
-
     font-size:20px;
 
     animation:
-        sparkleAnimation 2s ease-out forwards;
+        sparkle 1.8s ease-out forwards;
 }
 
-
-@keyframes sparkleAnimation{
+@keyframes sparkle{
 
     0%{
-
         opacity:0;
-
         transform:
             scale(0)
-            rotate(0deg);
+            rotate(0);
     }
 
     30%{
@@ -511,76 +703,145 @@ button{
     }
 
     100%{
-
         opacity:0;
-
         transform:
             scale(2)
             rotate(180deg);
     }
+
 }
 
-
-/* =========================
-   FIREWORKS
-========================= */
+/* =========================================================
+   FIREWORK
+========================================================= */
 
 .firework{
-
     position:fixed;
 
-    z-index:20;
+    z-index:50;
 
     pointer-events:none;
 
-    font-size:50px;
+    font-size:45px;
 
     animation:
-        explode 1.5s ease-out forwards;
+        firework 1.5s ease-out forwards;
 }
 
-
-@keyframes explode{
+@keyframes firework{
 
     0%{
-
         opacity:1;
-
-        transform:scale(0);
+        transform:scale(.2);
     }
 
     50%{
         opacity:1;
+        transform:scale(2);
     }
 
     100%{
-
         opacity:0;
-
         transform:scale(5);
     }
+
 }
 
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
 
-/* =========================
-   FINAL SCREEN
-========================= */
-
-.final-screen{
-
+.photo-viewer{
     position:fixed;
 
     inset:0;
 
-    z-index:100;
+    z-index:10000;
 
     display:flex;
 
+    align-items:center;
     justify-content:center;
 
-    align-items:center;
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.88);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+}
+
+.photo-viewer.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.photo-viewer img{
+    max-width:95vw;
+    max-height:88vh;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 0 40px rgba(255,0,100,.4);
+
+    animation:
+        photoOpen .4s ease;
+}
+
+@keyframes photoOpen{
+
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+.close-photo{
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    border:none;
+    background:none;
+
+    color:white;
+
+    font-size:40px;
+
+    cursor:pointer;
+}
+
+/* =========================================================
+   FINAL SCREEN
+========================================================= */
+
+.final-screen{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9000;
+
+    display:flex;
 
     flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
 
     padding:30px;
 
@@ -589,95 +850,33 @@ button{
     background:
         radial-gradient(
             circle at center,
-            rgba(255,30,90,.5),
-            rgba(30,0,15,.97)
+            rgba(255,40,110,.6),
+            rgba(15,0,10,.98)
         );
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:1.5s;
+    transition:
+        opacity 1s;
 
     overflow-y:auto;
 }
 
-
 .final-screen.show{
-
     opacity:1;
-
     pointer-events:auto;
 }
 
-
-/* =========================
-   FINAL TITLE
-========================= */
-
-.final-title{
-
-    font-family:cursive;
-
-    font-size:70px;
-
-    margin:10px;
-
-    text-shadow:
-        0 0 15px #ff477e,
-        0 0 40px #ff174f,
-        0 0 80px #ff174f;
-
-    animation:
-        finalGlow 1.5s infinite alternate;
-}
-
-
-@keyframes finalGlow{
-
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.08);
-    }
-}
-
-
-/* =========================
-   FINAL TEXT
-========================= */
-
-.final-text{
-
-    max-width:750px;
-
-    font-size:25px;
-
-    line-height:1.8;
-
-    margin:20px;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,.5);
-}
-
-
-/* =========================
-   FINAL HEART
-========================= */
-
 .final-heart{
-
     font-size:100px;
 
     animation:
-        heartBeat 1s infinite;
+        heartbeat 1s infinite;
 }
 
-
-@keyframes heartBeat{
+@keyframes heartbeat{
 
     0%,100%{
         transform:scale(1);
@@ -686,396 +885,201 @@ button{
     50%{
         transform:scale(1.25);
     }
+
 }
 
+.final-title{
+    font-family:cursive;
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+    font-size:clamp(50px,9vw,85px);
 
-.music{
+    margin:10px;
 
-    position:fixed;
+    text-shadow:
+        0 0 20px #ff477e,
+        0 0 50px #ff174f;
+}
 
-    top:20px;
+.final-subtitle{
+    font-size:22px;
 
-    right:20px;
+    color:#ffbdd3;
 
-    z-index:99999;
+    margin-bottom:20px;
+}
 
-    display:block;
+.final-text{
+    max-width:750px;
 
-    background:
-        rgba(255,40,100,.95);
+    font-size:22px;
 
-    color:white;
+    line-height:1.8;
 
-    border:
-        1px solid rgba(255,255,255,.5);
+    color:#fff;
 
-    padding:10px 18px;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.4);
+}
 
-    font-size:14px;
+.final-button{
+    margin-top:30px;
 
-    border-radius:30px;
+    padding:14px 28px;
 
-    backdrop-filter:blur(10px);
+    border:none;
+    border-radius:50px;
 
-    -webkit-backdrop-filter:blur(10px);
+    background:white;
 
-    box-shadow:
-        0 0 15px rgba(255,40,100,.5);
+    color:#c4004d;
 
-    margin:0;
+    font-size:17px;
+    font-weight:bold;
 
     cursor:pointer;
 }
 
-
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media(max-width:600px){
-
-    html,
-    body{
-
-        width:100%;
-        height:100%;
-
-        overflow:hidden;
-    }
-
-
-    .youtube-background iframe{
-
-        width:100vw;
-
-        height:100vh;
-
-        left:50%;
-
-        top:50%;
-
-        transform:
-            translate(-50%,-50%)
-            scale(1.5);
-
-        opacity:.15;
-    }
-
-
-    .container{
-
-        width:calc(100% - 24px);
-
-        max-height:calc(100vh - 80px);
-
-        padding:28px 18px;
-
-        margin:auto;
-
-        border-radius:25px;
-
-        overflow:hidden;
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        align-items:center;
-    }
-
-
-    #title{
-
-        font-size:46px;
-
-        line-height:1.1;
-
-        margin:0 0 12px;
-
-        white-space:nowrap;
-    }
-
-
-    .love-text{
-
-        font-size:17px;
-
-        line-height:1.55;
-
-        margin:12px 0;
-
-        max-width:100%;
-    }
-
-
-    .question{
-
-        font-size:22px;
-
-        line-height:1.3;
-
-        margin:16px 0 10px;
-    }
-
-
-    .container h2{
-
-        font-size:20px;
-
-        line-height:1.4;
-
-        margin:8px 0 12px;
-    }
-
-
-    .container button{
-
-        padding:13px 30px;
-
-        font-size:18px;
-
-        margin:7px;
-
-        min-width:125px;
-
-        min-height:50px;
-    }
-
-
-    #yes:hover{
-
-        transform:scale(1.05);
-    }
-
-
-    #result{
-
-        font-size:19px;
-
-        line-height:1.5;
-
-        margin-top:12px;
-    }
-
-
-    .compliment{
-
-        max-width:85vw;
-
-        padding:9px 14px;
-
-        font-size:13px;
-
-        white-space:normal;
-
-        text-align:center;
-
-        line-height:1.3;
-
-        border-radius:25px;
-    }
-
-
-    .heart{
-
-        font-size:20px;
-    }
-
-
-    .sparkle{
-
-        font-size:16px;
-    }
-
-
-    .firework{
-
-        font-size:38px;
-    }
-
+@media(max-width:700px){
 
     .music{
-
-        position:fixed;
-
-        top:12px;
-
-        right:12px;
-
-        bottom:auto;
-
-        left:auto;
-
-        z-index:99999;
-
-        display:block;
-
-        visibility:visible;
-
-        opacity:1;
-
-        padding:10px 15px;
-
-        margin:0;
-
-        min-width:auto;
-
-        min-height:auto;
-
-        font-size:13px;
-
-        line-height:1;
-
-        border-radius:30px;
-
-        background:
-            rgba(255,40,100,.95);
-
-        color:white;
-
-        border:
-            1px solid rgba(255,255,255,.6);
-
-        box-shadow:
-            0 0 15px rgba(255,40,100,.6);
-
-        backdrop-filter:blur(10px);
-
-        -webkit-backdrop-filter:blur(10px);
-    }
-
-
-    .final-screen{
-
-        padding:70px 15px 20px;
-
-        overflow-y:auto;
-
-        justify-content:center;
-    }
-
-
-    .final-heart{
-
-        font-size:70px;
-
-        margin-bottom:5px;
-    }
-
-
-    .final-title{
-
-        font-size:46px;
-
-        line-height:1.1;
-
-        margin:5px 0 12px;
-    }
-
-
-    .final-text{
-
-        max-width:95%;
-
-        font-size:18px;
-
-        line-height:1.55;
-
-        margin:10px auto;
-    }
-
-}
-
-
-/* =========================
-   SMALL PHONE
-========================= */
-
-@media(max-width:600px) and (max-height:700px){
-
-    .container{
-
-        padding:20px 15px;
-    }
-
-
-    #title{
-
-        font-size:40px;
-    }
-
-
-    .love-text{
-
-        font-size:15px;
-
-        line-height:1.4;
-
-        margin:8px 0;
-    }
-
-
-    .question{
-
-        font-size:19px;
-
-        margin:10px 0 6px;
-    }
-
-
-    .container h2{
-
-        font-size:18px;
-
-        margin:5px 0 8px;
-    }
-
-
-    .container button{
-
-        padding:11px 25px;
-
-        font-size:17px;
-
-        min-height:45px;
-    }
-
-
-    .final-heart{
-
-        font-size:60px;
-    }
-
-
-    .final-title{
-
-        font-size:40px;
-    }
-
-
-    .final-text{
-
-        font-size:16px;
-
-        line-height:1.45;
-    }
-
-
-    .music{
-
         top:10px;
-
         right:10px;
 
         padding:9px 13px;
 
         font-size:12px;
+    }
+
+    .main{
+        padding:
+            65px
+            12px
+            30px;
+    }
+
+    .card{
+        padding:
+            30px
+            15px;
+
+        border-radius:28px;
+    }
+
+    .small-title{
+        font-size:12px;
+        letter-spacing:3px;
+    }
+
+    .title{
+        font-size:48px;
+    }
+
+    .name{
+        font-size:43px;
+    }
+
+    .message{
+        font-size:17px;
+        line-height:1.65;
+    }
+
+    .cake{
+        font-size:60px;
+    }
+
+    .gallery-title{
+        font-size:24px;
+        margin-top:28px;
+    }
+
+    .gallery{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:9px;
+    }
+
+    .photo{
+        height:170px;
+        border-radius:16px;
+    }
+
+    .photo::after{
+        font-size:18px;
+        bottom:7px;
+        right:7px;
+    }
+
+    .surprise-btn{
+        width:90%;
+
+        padding:15px 20px;
+
+        font-size:17px;
+    }
+
+    .final-screen{
+        padding:
+            60px
+            15px
+            25px;
+    }
+
+    .final-heart{
+        font-size:70px;
+    }
+
+    .final-title{
+        font-size:47px;
+    }
+
+    .final-subtitle{
+        font-size:18px;
+    }
+
+    .final-text{
+        font-size:17px;
+        line-height:1.6;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .title{
+        font-size:42px;
+    }
+
+    .name{
+        font-size:37px;
+    }
+
+    .message{
+        font-size:15px;
+    }
+
+    .photo{
+        height:145px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition:none !important;
     }
 
 }
@@ -1088,96 +1092,31 @@ button{
 <body>
 
 
-<!-- =========================
-     YOUTUBE VIDEO
-========================= -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background"></div>
 
 <div class="youtube-background">
 
     <iframe
         id="youtubePlayer"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/c5wJSDMhmrQ?si=Xy2OC-m9um4y2udM&autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
-        title="YouTube video player"
+        src="https://www.youtube.com/embed/c5wJSDMhmrQ?autoplay=1&mute=1&loop=1&playlist=c5wJSDMhmrQ&controls=0&rel=0&playsinline=1"
+        title="Birthday Music"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
+        allow="autoplay; encrypted-media"
+        referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
 
 </div>
 
-
 <div class="overlay"></div>
 
 
-<!-- =========================
-     MAIN CARD
-========================= -->
-
-<div class="container">
-
-    <h1 id="title"></h1>
-
-
-    <p class="love-text">
-
-        შენი თვალები საოცარია ✨<br>
-
-        საოცარი ქალბატონი ხარ ❤️<br>
-
-        და რაც უფრო გიყურებ,
-        მით უფრო მომწონხარ... 🥹❤️
-
-    </p>
-
-
-    <div class="question">
-
-        მინდა რაღაც გკითხო... ❤️
-
-    </div>
-
-
-    <h2>
-
-        გამოხვალ ჩემთან ერთად? 🌹
-
-    </h2>
-
-
-    <div>
-
-        <button
-            id="yes"
-            onclick="yesClick()">
-
-            YES ❤️
-
-        </button>
-
-
-        <button
-            id="no"
-            onmouseover="moveButton()"
-            ontouchstart="moveButton()">
-
-            NO 😅
-
-        </button>
-
-    </div>
-
-
-    <p id="result"></p>
-
-</div>
-
-
-<!-- =========================
-     MUSIC BUTTON
-========================= -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
 <button
     class="music"
@@ -1189,97 +1128,305 @@ button{
 </button>
 
 
-<!-- =========================
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+    <section class="card">
+
+        <div class="small-title">
+            ✨ A Special Day ✨
+        </div>
+
+
+        <div class="title">
+            Happy Birthday
+        </div>
+
+
+        <div class="name">
+            Sophya ❤️
+        </div>
+
+
+        <div class="cake">
+            🎂
+        </div>
+
+
+        <div class="message">
+
+            დღეს უბრალოდ ჩვეულებრივი დღე არ არის... ❤️
+
+            <br><br>
+
+            დღეს იმ ადამიანის დაბადების დღეა,
+            ვინც თავისი ღიმილით,
+            თვალებით და უბრალოდ არსებობით
+            სამყაროს უფრო ლამაზს ხდის. ✨
+
+            <br><br>
+
+            <strong>
+                გილოცავ დაბადების დღეს, Sophya! 🎂❤️
+            </strong>
+
+            <br>
+
+            მინდა ყოველთვის ბედნიერი,
+            გაღიმებული და ისეთი ლამაზი იყო,
+            როგორიც დღეს ხარ. 🌹
+
+        </div>
+
+
+        <!-- =================================================
+             GALLERY
+        ================================================= -->
+
+        <div class="gallery-title">
+            📸 ჩვენი ლამაზი მომენტები ❤️
+        </div>
+
+
+        <div
+            class="gallery"
+            id="gallery">
+        </div>
+
+
+        <button
+            class="surprise-btn"
+            onclick="showSurprise()">
+
+            🎁 გახსენი შენი სიურპრიზი ❤️
+
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     PHOTO VIEWER
+===================================================== -->
+
+<div
+    class="photo-viewer"
+    id="photoViewer"
+    onclick="closePhoto(event)">
+
+    <button
+        class="close-photo"
+        onclick="closePhoto()">
+
+        ×
+
+    </button>
+
+    <img
+        id="viewerImage"
+        src=""
+        alt="Photo">
+
+</div>
+
+
+<!-- =====================================================
      FINAL SCREEN
-========================= -->
+===================================================== -->
 
 <div
     class="final-screen"
     id="finalScreen">
 
-
     <div class="final-heart">
-
         ❤️
-
     </div>
 
 
     <div class="final-title">
+        Happy Birthday
+    </div>
 
-        Sophya ❤️
 
+    <div class="final-subtitle">
+        Sophya 🌹
     </div>
 
 
     <div class="final-text">
 
-        შენ არ იცი ახლა როგორ გამაბედნიერე... 🥹❤️
+        მინდა, რომ ეს წელი შენთვის
+        ყველაზე ლამაზი და ბედნიერი იყოს. 🥹❤️
 
         <br><br>
 
-        შენს თვალებში რაღაც ისეთი არის,
-        რასაც სიტყვებით ვერ ავხსნი...
+        ყველა სურვილი აგსრულებოდეს,
+        ყველა დღე ღიმილით დაგეწყოს
+        და ცხოვრებაში ყოველთვის
+        გყავდეს ადამიანები,
+        რომლებიც შენს ღიმილს დააფასებენ. ✨
 
-        <br>
+        <br><br>
 
-        საოცარი ქალი ხარ,
-        საოცარი ღიმილი გაქვს
-        და მინდა შენს გვერდით
-        კიდევ ძალიან ბევრი ლამაზი
-        მომენტი შევქმნა. 🌹
+        შენ ნამდვილად განსაკუთრებული ადამიანი ხარ. ❤️
 
         <br><br>
 
         <strong>
-
-            შენს გულს აუცილებლად მოვიგებ. ❤️
-
+            გილოცავ დაბადების დღეს! 🎂🎉
         </strong>
 
         <br><br>
 
-        უბრალოდ მომეცი ამის შანსი... 🥰
+        და გახსოვდეს...
+
+        <br>
+
+        <strong>
+            შენ იმსახურებ მხოლოდ ყველაზე ლამაზ
+            და ბედნიერ მომენტებს. 🌹❤️
+        </strong>
 
     </div>
+
+
+    <button
+        class="final-button"
+        onclick="closeSurprise()">
+
+        ❤️ კიდევ ერთხელ ნახე
+
+    </button>
 
 </div>
 
 
 <script>
 
+/* =========================================================
+   PHOTOS
+========================================================= */
 
-/* =========================
-   TITLE TYPING
-========================= */
+/*
+    აქ ჩაწერე შენი ფოტოები.
 
-let titleText = "Sophya ❤️";
+    მაგალითად:
 
-let titleIndex = 0;
+    photo1.jpg
+    photo2.jpg
+    photo3.jpg
+    photo4.jpg
+
+    ფოტოები უნდა იყოს იმავე საქაღალდეში,
+    სადაც index.html არის.
+*/
+
+const photos = [
+
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg",
+    "photo5.jpg",
+    "photo6.jpg"
+
+];
 
 
-function typing(){
+/* =========================================================
+   CREATE GALLERY
+========================================================= */
 
-    if(titleIndex < titleText.length){
+const gallery =
+    document.getElementById("gallery");
 
-        document.getElementById("title").innerHTML +=
-            titleText.charAt(titleIndex);
 
-        titleIndex++;
+photos.forEach((photo,index)=>{
 
-        setTimeout(typing,120);
+    const wrapper =
+        document.createElement("div");
 
-    }
+    wrapper.className =
+        "photo";
+
+
+    const image =
+        document.createElement("img");
+
+    image.src = photo;
+
+    image.alt =
+        "Sophya photo " + (index + 1);
+
+
+    image.onerror = function(){
+
+        wrapper.style.display = "none";
+
+    };
+
+
+    wrapper.appendChild(image);
+
+
+    wrapper.onclick = function(){
+
+        openPhoto(photo);
+
+    };
+
+
+    gallery.appendChild(wrapper);
+
+});
+
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+function openPhoto(src){
+
+    const viewer =
+        document.getElementById("photoViewer");
+
+    const image =
+        document.getElementById("viewerImage");
+
+
+    image.src = src;
+
+    viewer.classList.add("show");
 
 }
 
 
-typing();
+function closePhoto(event){
+
+    if(
+        event &&
+        event.target &&
+        event.target.id === "viewerImage"
+    ){
+        return;
+    }
 
 
-/* =========================
+    document
+        .getElementById("photoViewer")
+        .classList.remove("show");
+
+}
+
+
+/* =========================================================
    MUSIC
-========================= */
+========================================================= */
 
 function startMusic(){
 
@@ -1289,8 +1436,7 @@ function startMusic(){
 
     iframe.src =
         "https://www.youtube.com/embed/c5wJSDMhmrQ" +
-        "?si=Xy2OC-m9um4y2udM" +
-        "&autoplay=1" +
+        "?autoplay=1" +
         "&mute=0" +
         "&loop=1" +
         "&playlist=c5wJSDMhmrQ" +
@@ -1299,194 +1445,140 @@ function startMusic(){
         "&playsinline=1";
 
 
-    document.getElementById("musicButton").innerHTML =
+    document
+        .getElementById("musicButton")
+        .innerHTML =
         "🎵 მუსიკა ჩართულია ❤️";
 
 }
 
 
-/* =========================
-   YES BUTTON
-========================= */
+/* =========================================================
+   SURPRISE
+========================================================= */
 
-function yesClick(){
+function showSurprise(){
 
-    startMusic();
-
-
-    document.querySelector(".container").style.opacity =
-        "0";
+    const screen =
+        document.getElementById("finalScreen");
 
 
-    document.querySelector(".container").style.transform =
-        "scale(.7)";
+    screen.classList.add("show");
 
 
-    setTimeout(()=>{
+    /* Fireworks */
 
-        document
-            .getElementById("finalScreen")
-            .classList.add("show");
+    for(let i=0;i<80;i++){
 
-    },500);
+        setTimeout(()=>{
 
+            createFirework();
+
+        },i*45);
+
+    }
+
+
+    /* Hearts */
 
     for(let i=0;i<100;i++){
 
         setTimeout(()=>{
 
-            createFirework();
+            createHeart();
+
+        },i*30);
+
+    }
+
+
+    /* Balloons */
+
+    for(let i=0;i<30;i++){
+
+        setTimeout(()=>{
+
+            createBalloon();
+
+        },i*120);
+
+    }
+
+
+    /* Sparkles */
+
+    for(let i=0;i<100;i++){
+
+        setTimeout(()=>{
+
+            createSparkle();
 
         },i*50);
 
     }
 
 
-    for(let i=0;i<80;i++){
-
-        setTimeout(()=>{
-
-            createHeart();
-
-        },i*40);
-
-    }
-
-
-    for(let i=0;i<70;i++){
-
-        setTimeout(()=>{
-
-            createSparkle();
-
-        },i*60);
-
-    }
+    startMusic();
 
 }
 
 
-/* =========================
-   NO BUTTON
-========================= */
+function closeSurprise(){
 
-function moveButton(){
-
-    const button =
-        document.getElementById("no");
-
-
-    let maxX =
-        Math.min(
-            250,
-            window.innerWidth / 3
-        );
-
-
-    let maxY =
-        Math.min(
-            180,
-            window.innerHeight / 3
-        );
-
-
-    if(window.innerWidth <= 600){
-
-        maxX =
-            Math.min(
-                90,
-                window.innerWidth / 4
-            );
-
-
-        maxY =
-            Math.min(
-                80,
-                window.innerHeight / 5
-            );
-
-    }
-
-
-    const x =
-        Math.random() *
-        (maxX * 2) -
-        maxX;
-
-
-    const y =
-        Math.random() *
-        (maxY * 2) -
-        maxY;
-
-
-    button.style.transform =
-        `translate(${x}px,${y}px`;
+    document
+        .getElementById("finalScreen")
+        .classList.remove("show");
 
 }
 
 
-/* =========================
-   COMPLIMENTS
-========================= */
+/* =========================================================
+   FLOATING COMPLIMENTS
+========================================================= */
 
 const compliments = [
 
-    "შენი თვალები საოცარია ✨",
+    "შენი ღიმილი საოცარია 😍",
 
-    "საოცარი ქალბატონი ხარ ❤️",
+    "საოცარი ადამიანი ხარ ❤️",
 
-    "შენი ღიმილი ყველაფერს ანათებს 😍",
+    "შენი თვალები ყველაფერს ამბობენ ✨",
 
-    "შენს სილამაზეს სიტყვებით ვერ ავხსნი ❤️",
+    "შენ ნამდვილად განსაკუთრებული ხარ 💖",
 
-    "შენში რაღაც განსაკუთრებულია 💖",
+    "შენი სილამაზე სიტყვებს სცდება 🌹",
 
-    "შენს გულს აუცილებლად მოვიგებ ❤️",
+    "შენი ღიმილი დღეს განსაკუთრებით ლამაზია 🥰",
 
-    "შენი გამოხედვა მაგიჟებს 😍",
+    "იყავი ყოველთვის ასეთი ბედნიერი ❤️",
 
-    "შენ უბრალოდ ულამაზესი ხარ ❤️",
+    "შენ იმსახურებ ყველაზე ლამაზ დღეებს ✨",
 
-    "შენთან საუბარი ყოველთვის მიხარია 🥰",
+    "შენს გვერდით ყოფნა ბედნიერებაა ❤️",
 
-    "შენ ძალიან, ძალიან მომწონხარ ❤️",
+    "შენში რაღაც განსაკუთრებულია 💕",
 
-    "შენი ღიმილი ჩემი საყვარელი რამეა 😍",
+    "შენი ერთი ღიმილიც კი საკმარისია 😍",
 
-    "შენ განსაკუთრებული ხარ 💕",
+    "გილოცავ დაბადების დღეს, ლამაზო! 🎂",
 
-    "შენთან ყოფნა მინდა ❤️",
+    "დღეს შენი დღეა! 🎉❤️",
 
-    "შენი სილამაზე მართლა საოცარია ✨",
+    "სიყვარული და ბედნიერება შენს ცხოვრებაში 💖",
 
-    "ვგიჟდები შენს თვალებზე 😍",
-
-    "შენ ხარ ის ადამიანი, ვინც გულში დამრჩა ❤️",
-
-    "შენი ხასიათიც ისეთივე ლამაზია, როგორიც შენ ხარ 🌹",
-
-    "შენზე ფიქრი ღიმილს მგვრის 🥰",
-
-    "მინდა კიდევ უფრო კარგად გაგიცნო ❤️",
-
-    "შენი ერთი ღიმილიც კი საკმარისია 💖",
-
-    "შენ ნამდვილად განსაკუთრებული ადამიანი ხარ ❤️",
-
-    "შენს გვერდით ყოფნა მინდა 🌹"
+    "ყველა სურვილი აგსრულებოდეს 🌹"
 
 ];
 
 
-function createCompliment(){
+function createFloatingText(){
 
     const element =
         document.createElement("div");
 
 
     element.className =
-        "compliment";
+        "floating";
 
 
     element.innerHTML =
@@ -1517,20 +1609,20 @@ function createCompliment(){
 
         element.remove();
 
-    },6500);
+    },6000);
 
 }
 
 
 setInterval(
-    createCompliment,
-    700
+    createFloatingText,
+    1000
 );
 
 
-/* =========================
+/* =========================================================
    HEARTS
-========================= */
+========================================================= */
 
 function createHeart(){
 
@@ -1553,21 +1645,21 @@ function createHeart(){
 
     ][
         Math.floor(
-            Math.random() * 6
+            Math.random()*6
         )
     ];
 
 
     heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random()*100 + "vw";
 
 
     heart.style.fontSize =
-        (18 + Math.random() * 35) + "px";
+        (18 + Math.random()*35) + "px";
 
 
     heart.style.animationDuration =
-        (4 + Math.random() * 5) + "s";
+        (4 + Math.random()*5) + "s";
 
 
     document.body.appendChild(heart);
@@ -1577,20 +1669,79 @@ function createHeart(){
 
         heart.remove();
 
-    },9000);
+    },10000);
 
 }
 
 
 setInterval(
     createHeart,
-    350
+    500
 );
 
 
-/* =========================
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+function createBalloon(){
+
+    const balloon =
+        document.createElement("div");
+
+
+    balloon.className =
+        "balloon";
+
+
+    balloon.innerHTML = [
+
+        "🎈",
+        "🎈",
+        "🎈",
+        "🎀",
+        "💗"
+
+    ][
+        Math.floor(
+            Math.random()*5
+        )
+    ];
+
+
+    balloon.style.left =
+        Math.random()*95 + "vw";
+
+
+    balloon.style.fontSize =
+        (40 + Math.random()*35) + "px";
+
+
+    balloon.style.animationDuration =
+        (6 + Math.random()*6) + "s";
+
+
+    document.body.appendChild(balloon);
+
+
+    setTimeout(()=>{
+
+        balloon.remove();
+
+    },13000);
+
+}
+
+
+setInterval(
+    createBalloon,
+    2500
+);
+
+
+/* =========================================================
    SPARKLES
-========================= */
+========================================================= */
 
 function createSparkle(){
 
@@ -1612,17 +1763,17 @@ function createSparkle(){
 
     ][
         Math.floor(
-            Math.random() * 5
+            Math.random()*5
         )
     ];
 
 
     sparkle.style.left =
-        Math.random() * 100 + "vw";
+        Math.random()*100 + "vw";
 
 
     sparkle.style.top =
-        Math.random() * 100 + "vh";
+        Math.random()*100 + "vh";
 
 
     document.body.appendChild(sparkle);
@@ -1639,13 +1790,13 @@ function createSparkle(){
 
 setInterval(
     createSparkle,
-    500
+    600
 );
 
 
-/* =========================
+/* =========================================================
    FIREWORKS
-========================= */
+========================================================= */
 
 function createFirework(){
 
@@ -1668,17 +1819,17 @@ function createFirework(){
 
     ][
         Math.floor(
-            Math.random() * 6
+            Math.random()*6
         )
     ];
 
 
     firework.style.left =
-        Math.random() * 90 + "vw";
+        Math.random()*90 + "vw";
 
 
     firework.style.top =
-        Math.random() * 75 + "vh";
+        Math.random()*75 + "vh";
 
 
     document.body.appendChild(firework);
@@ -1688,11 +1839,38 @@ function createFirework(){
 
         firework.remove();
 
-    },1500);
+    },1600);
+
+}
+
+
+/* =========================================================
+   INITIAL EFFECTS
+========================================================= */
+
+for(let i=0;i<15;i++){
+
+    setTimeout(()=>{
+
+        createHeart();
+
+    },i*250);
+
+}
+
+
+for(let i=0;i<10;i++){
+
+    setTimeout(()=>{
+
+        createBalloon();
+
+    },i*400);
 
 }
 
 </script>
+
 
 </body>
 
